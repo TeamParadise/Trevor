@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import net.pvschools.robotics.javabot.practice.Map;
+import net.pvschools.robotics.javabot.practice.commands.MecanumDrive;
 
 
 public class DriveTrain extends PIDSubsystem {
@@ -26,7 +27,7 @@ public class DriveTrain extends PIDSubsystem {
     }
     
     public void initDefaultCommand() {
-        
+         setDefaultCommand(new MecanumDrive());       
     }
     
     protected void usePIDOutput(double output) {

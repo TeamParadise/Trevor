@@ -11,6 +11,11 @@ package net.pvschools.robotics.javabot.practice.commands;
 public class MecanumDrive extends RoboCommand {
     
     boolean complete = false;
+	
+    public MecanumDrive()
+	{
+		requires(driveTrain);
+    }
 
     protected void initialize() 
     {

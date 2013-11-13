@@ -18,19 +18,14 @@ public class JavaBot extends IterativeRobot
 {
     
     /**The command to be run during the autonomous session*/
-    Command autonomousCommand;
-    Command operatorCommand;
     
     public void robotInit()
     {
         RoboCommand.init();
-        //autonomousCommand = new <command>();
-        operatorCommand = new MecanumDrive();
     }
 
     public void autonomousInit()
     {
-        autonomousCommand.start();
     }
 
     public void autonomousPeriodic()
