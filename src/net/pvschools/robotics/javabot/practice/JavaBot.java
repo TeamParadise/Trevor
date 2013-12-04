@@ -5,9 +5,7 @@
 package net.pvschools.robotics.javabot.practice;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import net.pvschools.robotics.javabot.practice.commands.MecanumDrive;
 import net.pvschools.robotics.javabot.practice.commands.RoboCommand;
 
 /**
