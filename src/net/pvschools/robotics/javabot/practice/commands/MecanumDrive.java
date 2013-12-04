@@ -24,8 +24,8 @@ public class MecanumDrive extends RoboCommand {
 
     protected void execute() 
     {
-        double calX     = oi.getDriveY(); 
-        double calY     = oi.getDriveX(); 
+        double calX     = oi.getDriveX(); 
+        double calY     = oi.getDriveY(); 
         double calTwist = oi.getDriveTwist(); 
 
         calX     = Math.abs(calX)     < 0.15 ? 0 : calX; 
