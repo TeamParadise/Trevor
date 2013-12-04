@@ -13,7 +13,7 @@ public class MecanumDrive extends RoboCommand {
     boolean complete = false;
 	
     public MecanumDrive()
-	{
+    {
 		requires(driveTrain);
     }
 
@@ -24,8 +24,8 @@ public class MecanumDrive extends RoboCommand {
 
     protected void execute() 
     {
-        double calX = oi.getDriveY();
-        double calY = oi.getDriveX();
+        double calX = oi.getDriveX();
+        double calY = oi.getDriveY();
         double calTwist = oi.getDriveTwist();
 
         calX = Math.abs(calX) < .15

@@ -24,6 +24,9 @@ public class DriveTrain extends PIDSubsystem {
                 new Talon(Map.frontright), 
                 new Talon(Map.backleft), 
                 new Talon(Map.backright));
+        
+        drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+        drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
     }
     
     public void initDefaultCommand() {
