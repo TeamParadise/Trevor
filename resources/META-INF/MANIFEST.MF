@@ -1,4 +1,4 @@
-MIDlet-Name: TeamParadiseRobot
+MIDlet-Name: TeamParadiseRobot         
 MIDlet-Version: 1.0.0
 MIDlet-Vendor: FIRST
 MIDlet-1: JavaBot, , net.pvschools.robotics.javabot.practice.JavaBot
