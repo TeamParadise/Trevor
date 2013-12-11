@@ -26,8 +26,8 @@ public class MecanumDrive extends RoboCommand {
     { 
         double dampingFactor = oi.getDamping();       // Between 0 and 1; 0 = No damping 
 
-        double calX     = oi.getDriveY(); 
-        double calY     = oi.getDriveX(); 
+        double calX     = oi.getDriveX();
+        double calY     = oi.getDriveY(); 
         double calTwist = oi.getDriveTwist(); 
 
         calX     = dampingFactor*calX*calX*calX             + (1-dampingFactor)*calX; 
