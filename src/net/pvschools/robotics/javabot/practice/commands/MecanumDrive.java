@@ -23,17 +23,20 @@ public class MecanumDrive extends RoboCommand {
     }
 
     protected void execute() 
-    {
-        double calX     = oi.getDriveX(); 
-        double calY     = oi.getDriveY(); 
+    { 
+        double dampingFactor = oi.getDamping();       // Between 0 and 1; 0 = No damping 
+
+        double calX     = oi.getDriveY(); 
+        double calY     = oi.getDriveX(); 
         double calTwist = oi.getDriveTwist(); 
 
-        calX     = Math.abs(calX)     < 0.15 ? 0 : calX; 
-        calY     = Math.abs(calY)     < 0.15 ? 0 : calY; 
-        calTwist = Math.abs(calTwist) < 0.15 ? 0 : calTwist;         
+        calX     = dampingFactor*calX*calX*calX             + (1-dampingFactor)*calX; 
+        calY     = dampingFactor*calY*calY*calY             + (1-dampingFactor)*calY; 
+        calTwist = dampingFactor*calTwist*calTwist*calTwist + (1-dampingFactor)*calTwist; 
 
         driveTrain.driveCartesian(calX, calY, calTwist, 0.0); 
-        complete = false;
+
+        complete = false; 
     }
 
     protected boolean isFinished() 
