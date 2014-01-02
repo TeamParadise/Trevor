@@ -4,6 +4,8 @@
  */
 package net.pvschools.robotics.javabot.practice.commands;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 /**
  *
  * @author student
@@ -29,16 +31,24 @@ public class MecanumDrive extends RoboCommand {
         double calX     = oi.getDriveX();
         double calY     = oi.getDriveY(); 
         double calTwist = oi.getDriveTwist(); 
+        
+//        SmartDashboard.putNumber(" x ", calX);
+//        SmartDashboard.putNumber(" y ", calY);
+//        SmartDashboard.putNumber(" Twist ", calTwist);
 
         calX     = dampingFactor*calX*calX*calX             + (1-dampingFactor)*calX; 
         calY     = dampingFactor*calY*calY*calY             + (1-dampingFactor)*calY; 
         calTwist = dampingFactor*calTwist*calTwist*calTwist + (1-dampingFactor)*calTwist; 
 
+        SmartDashboard.putNumber(" damp x ", calX);
+        SmartDashboard.putNumber(" damp y ", calY);
+        SmartDashboard.putNumber(" damp Twist ", calTwist);
+        
         driveTrain.driveCartesian(calX, calY, calTwist, 0.0); 
 
         complete = false; 
     }
-
+    
     protected boolean isFinished() 
     {
         return complete;

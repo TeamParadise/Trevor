@@ -15,5 +15,6 @@ public class Map {
            frontright = 2,
            backleft = 3,
            backright= 4,
-           joystickPort = 1;
+           joystickPort = 1,
+           gyroPort = 1;
 }
