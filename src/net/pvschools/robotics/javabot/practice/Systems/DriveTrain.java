@@ -45,4 +45,8 @@ public class DriveTrain extends PIDSubsystem {
         drive.mecanumDrive_Cartesian(x, y, twist, gyroAngle);
     }    
     
+    public void drivePolar(double magnitude, double direction, double rotation) {
+        drive.mecanumDrive_Polar(magnitude, direction, rotation);
+    }
+    
 }
