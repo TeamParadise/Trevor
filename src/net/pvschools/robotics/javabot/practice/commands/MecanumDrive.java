@@ -5,6 +5,7 @@
 package net.pvschools.robotics.javabot.practice.commands;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import com.sun.squawk.util.MathUtils;
 
 /**
  *
@@ -44,8 +45,14 @@ public class MecanumDrive extends RoboCommand {
         SmartDashboard.putNumber(" damp y ", calY);
         SmartDashboard.putNumber(" damp Twist ", calTwist);
         
-        driveTrain.driveCartesian(calX, calY, calTwist, 0.0); 
+        //driveTrain.driveCartesian(calX, calY, calTwist, 0.0);
 
+        driveTrain.drivePolar(
+            Math.sqrt((calY * calY) + (calX * calX)),           //Magnitude
+            Math.toDegrees(MathUtils.atan2(calY, calX)) + 90,        //Angle
+            calTwist);                                          //Rotation                                                //Rotation
+        
+        //driveTrain.drivePolar(Math.sqrt((calY * calY) + (calX * calX)), MathUtils.atan2(calY, calX), calTwist);
         complete = false; 
     }
     
