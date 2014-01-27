@@ -4,18 +4,27 @@
  */
 package net.pvschools.robotics.javabot.practice;
 
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import net.pvschools.robotics.javabot.practice.Systems.Piston;
 
 
 public class OI {
     
         
     Joystick mainJoystick = new Joystick(Map.joystickPort);
+    private Compressor compressor = new Compressor(Map.compressorSwitch, Map.compressorRelay);
+    private Piston[] pistons = {new Piston(Map.relay1, Map.solenoid1)};
+    private static OI instance;
     
     public OI(){
         SmartDashboard.putNumber("damping", .5);
         //Initialize buttons and such
+        
+        instance = this;
     }
     
     public double getDamping(){
@@ -38,6 +47,17 @@ public class OI {
         return mainJoystick.getTwist();
     }
     
+    public Piston getPiston(int index){
+        return pistons[index];
+    }
+    
+    public Piston[] getPistons(){
+        return pistons;
+    }
+    
+    public static OI getInstance(){
+        return instance;
+    }
     
        
 }

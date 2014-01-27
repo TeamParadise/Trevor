@@ -9,7 +9,7 @@ package net.pvschools.robotics.javabot.practice;
  * @author student
  */
 public class Map {
-    /**Motor Ports*/
+    /**Ports*/
    public static final int
            frontleft = 1,
            frontright = 2,
@@ -17,5 +17,9 @@ public class Map {
            backright= 4,
            joystickPort = 1,
            gyroPort = 1,
-           ultrasonic = 4;
+           ultrasonic = 4,
+           relay1 = 1,
+           solenoid1 = 6,
+           compressorSwitch = 5,
+           compressorRelay = 2;
 }
