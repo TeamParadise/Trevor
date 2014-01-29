@@ -21,9 +21,9 @@ public class Map {
            gyroPort = 1,
            
            ultrasonic = 4,
-           solenoid1 = 6,
+           shooterSolonoid = 6,
            compressorSwitch = 5,
            
-           relay1 = 1,
+           shooterRelay = 1,
            compressorRelay = 2;
 }
