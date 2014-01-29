@@ -8,19 +8,18 @@ package net.pvschools.robotics.javabot.practice.Systems;
 
 
 import edu.wpi.first.wpilibj.Compressor;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.Relay;
-import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import net.pvschools.robotics.javabot.practice.OI;
 
 
 public class Pneumatics extends Subsystem {
 
-    private Compressor compressor;
-    private Piston;
+    private final Compressor compressor;
+    private final Piston piston;
     
-    public Pneumatics(int index, Compressor compressor){
-        this.compressor = OI.getInstance();
+    public Pneumatics(int index, Piston piston){
+        this.compressor = OI.getInstance().getCompressor();
+        this.piston = piston;
     }
     
     public boolean isMaxPSI(){
@@ -39,11 +38,11 @@ public class Pneumatics extends Subsystem {
     }
     
     public void extendJacks(){
-        jacks.set(true);
+        piston.getSolenoid().set(true);
     }
     
     public void retractJacks(){
-        jacks.set(false);
+        piston.getSolenoid().set(false);
     }
     
 }

@@ -6,6 +6,7 @@ package net.pvschools.robotics.javabot.practice.commands;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import com.sun.squawk.util.MathUtils;
+import net.pvschools.robotics.javabot.practice.OI;
 
 /**
  *
@@ -27,11 +28,11 @@ public class MecanumDrive extends RoboCommand {
 
     protected void execute() 
     { 
-        double dampingFactor = oi.getDamping();       // Between 0 and 1; 0 = No damping 
+        double dampingFactor = OI.getInstance().getDamping();       // Between 0 and 1; 0 = No damping 
 
-        double calX     = oi.getDriveX();
-        double calY     = oi.getDriveY(); 
-        double calTwist = oi.getDriveTwist(); 
+        double calX     = OI.getInstance().getDriveX();
+        double calY     = OI.getInstance().getDriveY(); 
+        double calTwist = OI.getInstance().getDriveTwist(); 
         
 //        SmartDashboard.putNumber(" x ", calX);
 //        SmartDashboard.putNumber(" y ", calY);

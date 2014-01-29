@@ -19,7 +19,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class JavaBot extends IterativeRobot
 {
-
     Gyro gyro = new Gyro(1);
 //    public static MaxbotixUltrasonic sonar = new MaxbotixUltrasonic(4);
     //MaxbotixUltrasonic sonar = new MaxbotixUltrasonic(1);
@@ -30,6 +29,7 @@ public class JavaBot extends IterativeRobot
     /** The command to be run during the autonomous session */
     public void robotInit()
     {
+        new OI();
         RoboCommand.init();
         gyro.reset();
         //    try {

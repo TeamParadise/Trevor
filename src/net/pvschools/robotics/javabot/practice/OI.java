@@ -5,6 +5,7 @@
 package net.pvschools.robotics.javabot.practice;
 
 import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.Solenoid;
@@ -13,18 +14,18 @@ import net.pvschools.robotics.javabot.practice.Systems.Piston;
 
 
 public class OI {
-    
+    private static OI instance;
         
-    Joystick mainJoystick = new Joystick(Map.joystickPort);
+    private Joystick mainJoystick = new Joystick(Map.joystickPort);
     private Compressor compressor = new Compressor(Map.compressorSwitch, Map.compressorRelay);
     private Piston[] pistons = {new Piston(Map.relay1, Map.solenoid1)};
-    private static OI instance;
+    private Gyro gyro = new Gyro(Map.gyroPort);
     
     public OI(){
         SmartDashboard.putNumber("damping", .5);
+        instance = this;
         //Initialize buttons and such
         
-        instance = this;
     }
     
     public double getDamping(){
@@ -47,6 +48,10 @@ public class OI {
         return mainJoystick.getTwist();
     }
     
+    public Gyro getGyro(){
+        return gyro;
+    }
+    
     public Piston getPiston(int index){
         return pistons[index];
     }
@@ -55,9 +60,15 @@ public class OI {
         return pistons;
     }
     
+    public Compressor getCompressor(){
+        return compressor;
+    }
+    
     public static OI getInstance(){
         return instance;
     }
     
+    public static final int TRIGGER = 1,
+                            THUMB = 2;
        
 }

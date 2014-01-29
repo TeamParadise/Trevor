@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.Solenoid;
 
 /**
  *
- * @author student
+ * @author Trevor
  */
 public class Piston {
     
