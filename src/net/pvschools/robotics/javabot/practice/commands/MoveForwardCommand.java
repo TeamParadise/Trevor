@@ -13,17 +13,25 @@ package net.pvschools.robotics.javabot.practice.commands;
 public class MoveForwardCommand extends RoboCommand {
     
     private boolean finished = true;
-
+    private long startTime;
+    private double runTime;
+            
+    public MoveForwardCommand(double runTime){
+        this.runTime = runTime;
+    }
+    
     protected void initialize() {
         finished = false;
+        startTime = System.currentTimeMillis();
     }
 
     protected void execute() {
-        
+        if(!isFinished()){
+        }
     }
 
     protected boolean isFinished() {
-        return finished;
+        return finished || (System.currentTimeMillis() > startTime + runTime*1000);
     }
 
     protected void end() {
