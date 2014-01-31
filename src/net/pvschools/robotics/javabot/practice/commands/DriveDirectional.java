@@ -13,17 +13,15 @@ import edu.wpi.first.wpilibj.Timer;
  */
 public class DriveDirectional extends RoboCommand
 {
-//    private Timer timer;
+    private Timer timer;
     private double magnitude;
     private double direction;
     
     public DriveDirectional()
     {
         requires(driveTrain);
-        this.setTimeout(5);
 //        timer = new Timer();
     }
-
     
     public DriveDirectional(double magnitude, double direction)
     {

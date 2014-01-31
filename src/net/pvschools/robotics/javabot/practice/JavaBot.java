@@ -1,4 +1,3 @@
-/* FROM https://github.com/frc3946/UltimateAscent/tree/master/src/org/usfirst/frc3946/UltimateAscent */
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -42,7 +41,7 @@ public class JavaBot extends IterativeRobot
 
     public void autonomousInit()
     {
-        
+        OI.getInstance().getCompressor().start();
     }
 
     public void autonomousPeriodic()

@@ -13,7 +13,6 @@ public abstract class RoboCommand extends Command
 
     public static void init()
     {
-        
     }
 
     // Automatically created constructors.

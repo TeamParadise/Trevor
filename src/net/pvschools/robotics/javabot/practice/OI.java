@@ -13,7 +13,7 @@ import net.pvschools.robotics.javabot.practice.Systems.Piston;
 
 public class OI {
     private static OI instance;
-        
+
     private final Joystick mainJoystick = new Joystick(Map.joystickPort);
     private final Compressor compressor = new Compressor(Map.compressorSwitch, Map.compressorRelay);
     private final Piston[] pistons = {new Piston(Map.shooterRelay, Map.shooterSolonoid)};

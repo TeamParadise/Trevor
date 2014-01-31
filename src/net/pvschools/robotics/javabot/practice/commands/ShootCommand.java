@@ -4,30 +4,16 @@
 
 package net.pvschools.robotics.javabot.practice.commands;
 
+import edu.wpi.first.wpilibj.command.CommandGroup;
+
 /**
  *
  * @author Trevor
  */
-public class ShootCommand extends RoboCommand {
+public class ShootCommand extends CommandGroup {
     
-    private boolean finished = true;
-
-    protected void initialize() {
-        finished = false;
-    }
-
-    protected void execute() {
-    }
-
-    protected boolean isFinished() {
-        return finished;
-    }
-
-    protected void end() {
-        finished = true;
-    }
-
-    protected void interrupted() {
+    public ShootCommand(){
+        
     }
     
 }
