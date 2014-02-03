@@ -9,7 +9,7 @@ package net.pvschools.robotics.javabot.practice.Systems;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import net.pvschools.robotics.javabot.practice.OI;
+import net.pvschools.robotics.javabot.practice.IO;
 
 
 public class Pneumatics extends Subsystem {
@@ -18,7 +18,7 @@ public class Pneumatics extends Subsystem {
     private final Piston piston;
     
     public Pneumatics(int index, Piston piston){
-        this.compressor = OI.getInstance().getCompressor();
+        this.compressor = IO.getInstance().getCompressor();
         this.piston = piston;
     }
     

@@ -24,7 +24,9 @@ class WaitForGoal extends Command {
     }
 
     protected void execute() {
-        //TODO Add hot goal check
+        if(isHot()){
+            end();
+        }
     }
 
     protected boolean isFinished() {
@@ -36,6 +38,11 @@ class WaitForGoal extends Command {
     }
 
     protected void interrupted() {
+    }
+
+    private boolean isHot() {
+        //TODO Check if goal is hot
+        return false;
     }
     
 }

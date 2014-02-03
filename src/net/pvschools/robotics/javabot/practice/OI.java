@@ -13,9 +13,12 @@ public class OI {
     
     public OI(){
         SmartDashboard.putNumber("damping", .5);
-        instance = this;
         //Initialize buttons and such
         
+    }
+    
+    public static void init(){
+        instance = new OI();
     }
     
     public double getDamping(){

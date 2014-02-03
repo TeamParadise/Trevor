@@ -4,7 +4,6 @@
  */
 package net.pvschools.robotics.javabot.practice;
 
-import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import net.pvschools.robotics.javabot.practice.commands.RoboCommand;
@@ -18,7 +17,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class JavaBot extends IterativeRobot
 {
-    Gyro gyro = new Gyro(1);
 //    public static MaxbotixUltrasonic sonar = new MaxbotixUltrasonic(4);
     //MaxbotixUltrasonic sonar = new MaxbotixUltrasonic(1);
     int cntr = 0;
@@ -28,9 +26,10 @@ public class JavaBot extends IterativeRobot
     /** The command to be run during the autonomous session */
     public void robotInit()
     {
-        new OI();
+        IO.init();
+        OI.init();
         RoboCommand.init();
-        gyro.reset();
+        IO.getInstance().getGyro().reset();
         //    try {
         //           raspberryPi.connect();
         //       }
@@ -41,7 +40,7 @@ public class JavaBot extends IterativeRobot
 
     public void autonomousInit()
     {
-        OI.getInstance().getCompressor().start();
+        IO.getInstance().getCompressor().start();
     }
 
     public void autonomousPeriodic()
@@ -53,7 +52,7 @@ public class JavaBot extends IterativeRobot
     /** Run as an initial command before starting Operator Control */
     public void teleopInit()
     {
-        gyro.reset();
+        IO.getInstance().getGyro().reset();
     }
 
     public void teleopPeriodic()
@@ -61,7 +60,7 @@ public class JavaBot extends IterativeRobot
         Scheduler.getInstance().run();
         SmartDashboard.putString(" message ", "latest version");
 
-        double angle = gyro.getAngle();
+        double angle = IO.getInstance().getGyro().getAngle();
         SmartDashboard.putNumber(" Gyro ", angle);
         SmartDashboard.putNumber("Watchdog ", getWatchdog().getTimer());
         SmartDashboard.putNumber(" Periodic ", cntr2);
