@@ -12,9 +12,9 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  *
  * @author Trevor
  */
-public class Autonomous extends CommandGroup {
+public class AutonomousCommand extends CommandGroup {
     
-    public Autonomous(){
+    public AutonomousCommand(){
         addSequential(new DriveDirectional(.3, 0), 1);
         addSequential(new WaitForGoal(), 6);
         addSequential(new ShootCommand());

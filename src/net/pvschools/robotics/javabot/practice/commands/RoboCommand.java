@@ -26,4 +26,9 @@ public abstract class RoboCommand extends Command
         super();
     }
 
+    public RoboCommand(int timeOut)
+    {
+        super(timeOut);
+    }
+
 }
