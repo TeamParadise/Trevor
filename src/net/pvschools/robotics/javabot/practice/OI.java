@@ -4,15 +4,20 @@
 package net.pvschools.robotics.javabot.practice;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import net.pvschools.robotics.javabot.practice.commands.OpenPiston;
 
 public class OI {
     private static OI instance;
 
     private final Joystick mainJoystick = new Joystick(Map.joystickPort);
+    private final Button button1 = new JoystickButton(mainJoystick, 1);
     
     public OI(){
         SmartDashboard.putNumber("damping", .5);
+        button1.whenPressed(new OpenPiston(IO.getInstance().getPiston(0D)));
         //Initialize buttons and such
         
     }
