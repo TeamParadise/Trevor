@@ -5,15 +5,12 @@
  */
 package net.pvschools.robotics.javabot.practice.commands;
 
-import edu.wpi.first.wpilibj.Timer;
-
 /**
  *
  * @author robostud
  */
 public class DriveDirectional extends RoboCommand
 {
-    private Timer timer;
     private double magnitude;
     private double direction;
     

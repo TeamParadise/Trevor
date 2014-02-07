@@ -24,6 +24,6 @@ public class Map {
            shooterSolonoid = 6,
            compressorSwitch = 5,
            
-           shooterRelay = 1,
+           shooterRelay = 5,
            compressorRelay = 2;
 }

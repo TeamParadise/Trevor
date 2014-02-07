@@ -6,44 +6,41 @@
 
 package net.pvschools.robotics.javabot.practice.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-import net.pvschools.robotics.javabot.practice.IO;
+import net.pvschools.robotics.javabot.practice.Systems.Piston;
 
 /**
  *
  * @author student
  */
-class WaitForGoal extends Command {
+public class OpenPiston extends RoboCommand{
     
-    private boolean finished = true;
-
-    public WaitForGoal() {
+    private Piston piston;
+    
+    public OpenPiston(Piston p, double time){
+        super(time);
+        piston = p;
+    }
+    
+    public OpenPiston(Piston p){
+        this(p, 1);
     }
 
     protected void initialize() {
-        finished = false;
     }
 
     protected void execute() {
-        if(isHot()){
-            end();
-        }
+        piston.getSolenoid().set(true);
     }
 
     protected boolean isFinished() {
-        return finished;
+        return this.isTimedOut();
     }
 
     protected void end() {
-        finished = true;
+        piston.getSolenoid().set(false);
     }
 
     protected void interrupted() {
-    }
-
-    public boolean isHot() {
-        
-        return false;
     }
     
 }

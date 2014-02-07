@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import net.pvschools.robotics.javabot.practice.commands.RoboCommand;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import net.pvschools.robotics.javabot.practice.commands.AutonomousCommand;
 //import net.pvschools.robotics.javabot.practice.Systems.MaxbotixUltrasonic;
 //import net.pvschools.robotics.javabot.practice.Systems.MaxbotixUltrasonic;
 
@@ -21,6 +22,8 @@ public class JavaBot extends IterativeRobot
     //MaxbotixUltrasonic sonar = new MaxbotixUltrasonic(1);
     int cntr = 0;
     int cntr2 = 0;
+    
+    private AutonomousCommand autonomousCommand = new AutonomousCommand();
     //SocketPi raspberryPi = new SocketPi();
 
     /** The command to be run during the autonomous session */
@@ -30,6 +33,7 @@ public class JavaBot extends IterativeRobot
         OI.init();
         RoboCommand.init();
         IO.getInstance().getGyro().reset();
+        IO.getInstance().getCompressor().start();
         //    try {
         //           raspberryPi.connect();
         //       }
@@ -40,12 +44,11 @@ public class JavaBot extends IterativeRobot
 
     public void autonomousInit()
     {
-        IO.getInstance().getCompressor().start();
+        autonomousCommand.start();
     }
 
     public void autonomousPeriodic()
     {
-        //autonomousCode.toWall(1.0);
         Scheduler.getInstance().run();
     }
 

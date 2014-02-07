@@ -18,6 +18,7 @@ public class IO {
     private final Compressor compressor = new Compressor(Map.compressorSwitch, Map.compressorRelay);
     private final Piston[] pistons = {new Piston(Map.shooterRelay, Map.shooterSolonoid)};
     private final Gyro gyro = new Gyro(Map.gyroPort);
+    private final VisionProcessing vp = new VisionProcessing();
     
     public IO(){
     }
@@ -44,6 +45,10 @@ public class IO {
     
     public static IO getInstance(){
         return instance;
+    }
+    
+    public VisionProcessing getVisionProcess(){
+        return vp;
     }
     
 }
