@@ -17,7 +17,7 @@ public class OI {
     
     public OI(){
         SmartDashboard.putNumber("damping", .5);
-        button1.whenPressed(new OpenPiston(IO.getInstance().getPiston(0)));
+        button1.whenPressed(new OpenPiston(IO.getInstance().getPistons()[0]));
         //Initialize buttons and such
         
     }
