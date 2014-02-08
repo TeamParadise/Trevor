@@ -12,8 +12,8 @@ import net.pvschools.robotics.javabot.practice.Systems.Piston;
  *
  * @author Trevor
  */
-public class IO {
-    
+public class IO
+{
     private static IO instance = new IO();
     
     private final Compressor compressor = new Compressor(Map.compressorSwitch, Map.compressorRelay);
@@ -21,31 +21,37 @@ public class IO {
     private final Gyro gyro = new Gyro(Map.gyroPort);
     private final VisionProcessing vp = new VisionProcessing();
     
-    private IO(){
+    private IO()
+    {
     }
     
-    public Gyro getGyro(){
+    public Gyro getGyro()
+    {
         return gyro;
     }
     
-    public Piston getPiston(int index){
+    public Piston getPiston(int index)
+    {
         return pistons[index];
     }
     
-    public Piston[] getPistons(){
+    public Piston[] getPistons()
+    {
         return pistons;
     }
     
-    public Compressor getCompressor(){
+    public Compressor getCompressor()
+    {
         return compressor;
     }
     
-    public static IO getInstance(){
+    public static IO getInstance()
+    {
         return instance;
     }
     
-    public VisionProcessing getVisionProcess(){
+    public VisionProcessing getVisionProcess()
+    {
         return vp;
     }
-    
 }

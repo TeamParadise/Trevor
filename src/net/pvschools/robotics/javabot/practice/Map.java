@@ -23,6 +23,6 @@ public class Map {
    public static final int shooterSolenoid  = 6;
    public static final int compressorSwitch = 5;
            
-   public static final int shooterRelay     = 1;
+   public static final int shooterRelay     = 5;
    public static final int compressorRelay  = 2;
 }

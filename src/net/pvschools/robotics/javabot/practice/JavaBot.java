@@ -22,7 +22,6 @@ public class JavaBot extends IterativeRobot
     int cntr = 0;
     int cntr2 = 0;
     
-    private AutonomousCommand autonomousCommand = new AutonomousCommand();
     //SocketPi raspberryPi = new SocketPi();
 
     /** The command to be run during the autonomous session */
@@ -40,7 +39,6 @@ public class JavaBot extends IterativeRobot
 
     public void autonomousInit()
     {
-        IO.getInstance().getCompressor().start();
         new RunAutonomous().start();
     }
 

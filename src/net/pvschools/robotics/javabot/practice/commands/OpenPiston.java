@@ -9,38 +9,54 @@ package net.pvschools.robotics.javabot.practice.commands;
 import net.pvschools.robotics.javabot.practice.Systems.Piston;
 
 /**
+ * Opens a piston for a specified amount of time.
  *
  * @author student
  */
-public class OpenPiston extends RoboCommand{
-    
+public class OpenPiston extends RoboCommand
+{
     private Piston piston;
     
-    public OpenPiston(Piston p, double time){
+    public OpenPiston(Piston p, double time)
+    {
         super(time);
         piston = p;
     }
     
-    public OpenPiston(Piston p){
+    // Default open time of 1 second.
+    // TODO: 1 second sounds arbitrary - do we really want this constructor?
+    public OpenPiston(Piston p)
+    {
         this(p, 1);
     }
 
-    protected void initialize() {
+    protected void initialize()
+    {
     }
 
-    protected void execute() {
+    protected void execute()
+    {
         piston.getSolenoid().set(true);
     }
 
-    protected boolean isFinished() {
+    protected boolean isFinished()
+    {
         return this.isTimedOut();
     }
 
-    protected void end() {
-        piston.getSolenoid().set(false);
+    protected void end()
+    {
+        close();
     }
 
-    protected void interrupted() {
+    protected void interrupted()
+    {
+        close();
+    }
+
+    private void close()
+    {
+        piston.getSolenoid().set(false);
     }
     
 }

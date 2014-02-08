@@ -9,15 +9,16 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import net.pvschools.robotics.javabot.practice.Map;
 import net.pvschools.robotics.javabot.practice.commands.DriveWithJoysticks;
 
-
-public class DriveTrain extends PIDSubsystem {
+public class DriveTrain extends PIDSubsystem
+{
     private static final double Kp = 3;
     private static final double Ki = .2;
     private static final double Kd = 0.0;
     
     RobotDrive drive;
 
-    public DriveTrain() {
+    public DriveTrain()
+    {
         super("DriveTrain", Kp, Ki, Kd);
         drive = new RobotDrive(new Talon(Map.frontleft), 
                 new Talon(Map.frontright), 
@@ -28,23 +29,28 @@ public class DriveTrain extends PIDSubsystem {
         drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
     }
     
-    public void initDefaultCommand() {
+    public void initDefaultCommand()
+    {
          setDefaultCommand(new DriveWithJoysticks());       
     }
     
-    protected void usePIDOutput(double output) {
+    protected void usePIDOutput(double output)
+    {
         
     }
 
-    protected double returnPIDInput() {
+    protected double returnPIDInput()
+    {
         return 0D;
     }
     
-    public void driveCartesian(double x, double y, double twist, double gyroAngle) {
+    public void driveCartesian(double x, double y, double twist, double gyroAngle)
+    {
         drive.mecanumDrive_Cartesian(x, y, twist, gyroAngle);
     }    
     
-    public void drivePolar(double magnitude, double direction, double rotation) {
+    public void drivePolar(double magnitude, double direction, double rotation)
+    {
         drive.mecanumDrive_Polar(magnitude, direction, rotation);
     }
     

@@ -13,8 +13,8 @@ import edu.wpi.first.wpilibj.Solenoid;
  *
  * @author Trevor
  */
-public class Piston {
-    
+public class Piston
+{
     private Relay relay;
     private Solenoid solenoid;
     
@@ -23,11 +23,13 @@ public class Piston {
         this.solenoid = new Solenoid(solenoidPort);
     }
     
-    public Relay getRelay(){
+    public Relay getRelay()
+    {
         return relay;
     }
     
-    public Solenoid getSolenoid(){
+    public Solenoid getSolenoid()
+    {
         return solenoid;
     }
     

@@ -6,37 +6,27 @@
 
 package net.pvschools.robotics.javabot.practice.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-import net.pvschools.robotics.javabot.practice.IO;
-
 /**
  *
  * @author student
  */
 class WaitForGoal extends RoboCommand
 {
-    
-    private boolean finished = true;
-
     public WaitForGoal()
     {
     }
 
     protected void initialize()
     {
-        finished = false;
     }
 
     protected void execute()
     {
-        if(isHot()){
-            end();
-        }
     }
 
     protected boolean isFinished()
     {
-        return finished;
+        return isHot();
     }
 
     protected void end()
@@ -52,5 +42,4 @@ class WaitForGoal extends RoboCommand
         //TODO Check if goal is hot
         return false;
     }
-    
 }

@@ -28,27 +28,33 @@ public class OI
         
     }
     
-    public double getDamping(){
+    public double getDamping()
+    {
         return SmartDashboard.getNumber("damping");
     }
     
-    public double getDriveThrottle(){
+    public double getDriveThrottle()
+    {
         return mainJoystick.getThrottle();
     }
     
-    public double getDriveX(){
+    public double getDriveX()
+    {
         return mainJoystick.getY();
     }
     
-    public double getDriveY(){
+    public double getDriveY()
+    {
         return mainJoystick.getX();
     }
     
-    public double getDriveTwist(){
+    public double getDriveTwist()
+    {
         return mainJoystick.getTwist();
     }
     
-    public static OI getInstance(){
+    public static OI getInstance()
+    {
         return instance;
     }
 }
