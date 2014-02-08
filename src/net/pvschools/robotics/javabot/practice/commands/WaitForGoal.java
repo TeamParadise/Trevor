@@ -14,6 +14,7 @@ class WaitForGoal extends RoboCommand
 {
     public WaitForGoal()
     {
+		requires(visionTargetSpotter);
     }
 
     protected void initialize()
@@ -22,11 +23,12 @@ class WaitForGoal extends RoboCommand
 
     protected void execute()
     {
+		visionTargetSpotter.analyzeCameraImage();
     }
 
     protected boolean isFinished()
     {
-        return isHot();
+        return visionTargetSpotter.isDesiredTargetHot();
     }
 
     protected void end()
@@ -35,11 +37,5 @@ class WaitForGoal extends RoboCommand
 
     protected void interrupted()
     {
-    }
-
-    private boolean isHot()
-    {
-        //TODO Check if goal is hot
-        return false;
     }
 }

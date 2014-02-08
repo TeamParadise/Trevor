@@ -4,6 +4,7 @@
 
 package net.pvschools.robotics.javabot.practice;
 
+import net.pvschools.robotics.javabot.practice.Systems.VisionTargetSpotter;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Gyro;
 import net.pvschools.robotics.javabot.practice.Systems.Piston;
@@ -19,7 +20,7 @@ public class IO
     private final Compressor compressor = new Compressor(Map.compressorSwitch, Map.compressorRelay);
     private final Piston[] pistons = {new Piston(Map.shooterRelay, Map.shooterSolenoid)};
     private final Gyro gyro = new Gyro(Map.gyroPort);
-    private final VisionProcessing vp = new VisionProcessing();
+    private final VisionTargetSpotter vp = new VisionTargetSpotter();
     
     private IO()
     {
@@ -50,7 +51,7 @@ public class IO
         return instance;
     }
     
-    public VisionProcessing getVisionProcess()
+    public VisionTargetSpotter getVisionProcess()
     {
         return vp;
     }
