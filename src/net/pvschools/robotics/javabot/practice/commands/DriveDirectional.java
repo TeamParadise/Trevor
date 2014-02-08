@@ -5,8 +5,6 @@
  */
 package net.pvschools.robotics.javabot.practice.commands;
 
-import edu.wpi.first.wpilibj.Timer;
-
 /**
  * Class for driving the robot at a fixed speed and direction.
  *

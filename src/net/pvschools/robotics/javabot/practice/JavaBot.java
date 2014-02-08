@@ -21,12 +21,15 @@ public class JavaBot extends IterativeRobot
     //MaxbotixUltrasonic sonar = new MaxbotixUltrasonic(1);
     int cntr = 0;
     int cntr2 = 0;
+    
+    private AutonomousCommand autonomousCommand = new AutonomousCommand();
     //SocketPi raspberryPi = new SocketPi();
 
     /** The command to be run during the autonomous session */
     public void robotInit()
     {
         IO.getInstance().getGyro().reset();
+        IO.getInstance().getCompressor().start();
         //    try {
         //           raspberryPi.connect();
         //       }

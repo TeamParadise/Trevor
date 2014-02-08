@@ -4,13 +4,17 @@
 package net.pvschools.robotics.javabot.practice;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import net.pvschools.robotics.javabot.practice.commands.OpenPiston;
 
 public class OI
 {
     private static OI instance = new OI();
 
     private final Joystick mainJoystick = new Joystick(Map.joystickPort);
+    private final Button button1 = new JoystickButton(mainJoystick, 1);
     
     // These are not used. Can they be deleted?
     public static final int TRIGGER = 1;
@@ -19,6 +23,7 @@ public class OI
     private OI()
     {
         SmartDashboard.putNumber("damping", .5);
+        button1.whenPressed(new OpenPiston(IO.getInstance().getPistons()[0]));
         //Initialize buttons and such
         
     }

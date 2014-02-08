@@ -7,6 +7,7 @@
 package net.pvschools.robotics.javabot.practice.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import net.pvschools.robotics.javabot.practice.IO;
 
 /**
  *
