@@ -14,16 +14,13 @@ import net.pvschools.robotics.javabot.practice.Systems.Piston;
  */
 public class IO {
     
-    private static IO instance;
+    private static IO instance = new IO();
+    
     private final Compressor compressor = new Compressor(Map.compressorSwitch, Map.compressorRelay);
-    private final Piston[] pistons = {new Piston(Map.shooterRelay, Map.shooterSolonoid)};
+    private final Piston[] pistons = {new Piston(Map.shooterRelay, Map.shooterSolenoid)};
     private final Gyro gyro = new Gyro(Map.gyroPort);
     
-    public IO(){
-    }
-    
-    public static void init(){
-        instance = new IO();
+    private IO(){
     }
     
     public Gyro getGyro(){

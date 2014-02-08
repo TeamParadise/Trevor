@@ -10,20 +10,19 @@ package net.pvschools.robotics.javabot.practice;
  */
 public class Map {
     /**Ports*/
-   public static final int
-           frontleft = 1,
-           frontright = 2,
-           backleft = 3,
-           backright= 4,
+   public static final int frontleft        = 1;
+   public static final int frontright       = 2;
+   public static final int backleft         = 3;
+   public static final int backright        = 4;
            
-           joystickPort = 1,
+   public static final int joystickPort     = 1;
            
-           gyroPort = 1,
+   public static final int gyroPort         = 1;
            
-           ultrasonic = 4,
-           shooterSolonoid = 6,
-           compressorSwitch = 5,
+   public static final int ultrasonic       = 4;
+   public static final int shooterSolenoid  = 6;
+   public static final int compressorSwitch = 5;
            
-           shooterRelay = 1,
-           compressorRelay = 2;
+   public static final int shooterRelay     = 1;
+   public static final int compressorRelay  = 2;
 }

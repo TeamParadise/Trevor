@@ -6,19 +6,21 @@ package net.pvschools.robotics.javabot.practice;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-public class OI {
-    private static OI instance;
+public class OI
+{
+    private static OI instance = new OI();
 
     private final Joystick mainJoystick = new Joystick(Map.joystickPort);
     
-    public OI(){
+    // These are not used. Can they be deleted?
+    public static final int TRIGGER = 1;
+    public static final int THUMB = 2;
+
+    private OI()
+    {
         SmartDashboard.putNumber("damping", .5);
         //Initialize buttons and such
         
-    }
-    
-    public static void init(){
-        instance = new OI();
     }
     
     public double getDamping(){
@@ -44,8 +46,4 @@ public class OI {
     public static OI getInstance(){
         return instance;
     }
-    
-    public static final int TRIGGER = 1,
-                            THUMB = 2;
-       
 }

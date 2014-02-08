@@ -8,7 +8,6 @@ import net.pvschools.robotics.javabot.practice.Systems.DriveTrain;
 
 public abstract class RoboCommand extends Command
 {
-
     public static DriveTrain driveTrain = new DriveTrain();
 
     public static void init()

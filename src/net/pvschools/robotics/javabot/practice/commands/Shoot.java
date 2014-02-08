@@ -10,9 +10,10 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  *
  * @author Trevor
  */
-public class ShootCommand extends CommandGroup {
-    
-    public ShootCommand(){
+public class Shoot extends CommandGroup
+{
+    public Shoot()
+    {
         
     }
     

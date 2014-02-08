@@ -8,24 +8,19 @@ package net.pvschools.robotics.javabot.practice.commands;
 import edu.wpi.first.wpilibj.Timer;
 
 /**
+ * Class for driving the robot at a fixed speed and direction.
  *
  * @author robostud
  */
 public class DriveDirectional extends RoboCommand
 {
-    private Timer timer;
     private double magnitude;
     private double direction;
     
-    public DriveDirectional()
-    {
-        requires(driveTrain);
-//        timer = new Timer();
-    }
-    
+    // Specifies speed and direction to drive the robot.
     public DriveDirectional(double magnitude, double direction)
     {
-        this();
+        requires(driveTrain);
         this.magnitude = magnitude;
         this.direction = direction;
     }
@@ -33,38 +28,39 @@ public class DriveDirectional extends RoboCommand
     // Called just before this Command runs the first time
     protected void initialize()
     {
-//        timer.reset();
-//        timer.start();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
     {
         driveTrain.drivePolar(magnitude, direction, 0);
-        
-//        if (timer.get() < 5.0)
-//        {
-//            driveTrain.drivePolar(magnitude, direction, 0);
-//        }
-//        else driveTrain.drivePolar(0, 0, 0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
+    //
+    // Note that this command is typically called from the Autonomous
+    //
     protected boolean isFinished()
     {
-        return this.isTimedOut();
-//        return timer.get() > 5.0;
+        return false;
     }
 
     // Called once after isFinished returns true
     protected void end()
     {
-        driveTrain.drivePolar(0, 0, 0);
+        stop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted()
     {
+        stop();
+    }
+    
+    // Stop all drive motion.
+    private void stop()
+    {
+        driveTrain.drivePolar(0, 0, 0);
     }
 }

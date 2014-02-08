@@ -12,35 +12,42 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  * @author student
  */
-class WaitForGoal extends Command {
+class WaitForGoal extends RoboCommand
+{
     
     private boolean finished = true;
 
-    public WaitForGoal() {
+    public WaitForGoal()
+    {
     }
 
-    protected void initialize() {
+    protected void initialize()
+    {
         finished = false;
     }
 
-    protected void execute() {
+    protected void execute()
+    {
         if(isHot()){
             end();
         }
     }
 
-    protected boolean isFinished() {
+    protected boolean isFinished()
+    {
         return finished;
     }
 
-    protected void end() {
-        finished = true;
+    protected void end()
+    {
     }
 
-    protected void interrupted() {
+    protected void interrupted()
+    {
     }
 
-    private boolean isHot() {
+    private boolean isHot()
+    {
         //TODO Check if goal is hot
         return false;
     }

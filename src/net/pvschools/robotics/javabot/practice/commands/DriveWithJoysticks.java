@@ -9,21 +9,19 @@ import com.sun.squawk.util.MathUtils;
 import net.pvschools.robotics.javabot.practice.OI;
 
 /**
- *
+ * Drives the robot using input from the joysticks.
+ * 
  * @author student
  */
-public class MecanumDrive extends RoboCommand {
-    
-    boolean complete = false;
-	
-    public MecanumDrive()
+public class DriveWithJoysticks extends RoboCommand
+{
+    public DriveWithJoysticks()
     {
-		requires(driveTrain);
+        requires(driveTrain);
     }
 
     protected void initialize() 
     {
-        complete = false;
     }
 
     protected void execute() 
@@ -46,30 +44,31 @@ public class MecanumDrive extends RoboCommand {
         SmartDashboard.putNumber(" damp y ", calY);
         SmartDashboard.putNumber(" damp Twist ", calTwist);
         
-        //driveTrain.driveCartesian(calX, calY, calTwist, 0.0);
-
         driveTrain.drivePolar(
             Math.sqrt((calY * calY) + (calX * calX)),           //Magnitude
-            Math.toDegrees(MathUtils.atan2(calY, calX)) + 90,        //Angle
-            calTwist);                                          //Rotation                                                //Rotation
-        
-        //driveTrain.drivePolar(Math.sqrt((calY * calY) + (calX * calX)), MathUtils.atan2(calY, calX), calTwist);
-        complete = false; 
+            Math.toDegrees(MathUtils.atan2(calY, calX)) + 90,   //Angle
+            calTwist);                                          //Rotation
     }
     
+    // This command never finishes.
     protected boolean isFinished() 
     {
-        return complete;
+        return false;
     }
 
     protected void end() 
     {
-        complete = true;
+        stop();
     }
 
     protected void interrupted() 
     {
-        
+        stop();
     }
     
+    // Stop all drive motion.
+    private void stop()
+    {
+        driveTrain.drivePolar(0, 0, 0);
+    }
 }
