@@ -21,7 +21,6 @@ public class RunAutonomous extends CommandGroup
 		// TODO: Replace 0 speed used for testing with real speed
         addSequential(new DriveDirectional(0, 270), 1);
         addSequential(new WaitForGoal(), 6);
-        addSequential(new Shoot(), .1);
-    }
-    
+        addSequential(new Shoot());
+    }    
 }
