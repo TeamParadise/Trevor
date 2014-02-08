@@ -138,6 +138,12 @@ public class VisionTargetSpotter extends Subsystem
        
         SmartDashboard.putBoolean(shootingLeft, true);
     }
+	
+	// Resets target information
+	public void reset()
+	{
+		updateSmartDashboard(new TargetReport());
+	}
 
 	public void analyzeCameraImage()
 	{
@@ -228,7 +234,7 @@ public class VisionTargetSpotter extends Subsystem
 				target.verticalIndex = verticalTargets[0];
 				target.Hot = hotOrNot(target);
 
-				UpdateSmartDashboard(target);
+				updateSmartDashboard(target);
 
 				for (int i = 0; i < verticalTargetCount; i++)
 				{
@@ -267,7 +273,7 @@ public class VisionTargetSpotter extends Subsystem
 
 							//Determine if the best target is a Hot target
 							target.Hot = hotOrNot(target);
-							UpdateSmartDashboard(target);
+							updateSmartDashboard(target);
 						}
 					}
 				}
@@ -308,7 +314,7 @@ public class VisionTargetSpotter extends Subsystem
 		return	SmartDashboard.getBoolean(shootingTargetHot);
 	}
     
-    private void UpdateSmartDashboard(TargetReport target)
+    private void updateSmartDashboard(TargetReport target)
     {
         SmartDashboard.putNumber(targetTotalScore, target.totalScore);
         SmartDashboard.putNumber(targetLeftScore, target.leftScore);

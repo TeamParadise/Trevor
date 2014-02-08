@@ -6,12 +6,16 @@
 
 package net.pvschools.robotics.javabot.practice.commands;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 /**
  *
  * @author student
  */
 class WaitForGoal extends RoboCommand
 {
+	int executeCount;
+	
     public WaitForGoal()
     {
 		requires(visionTargetSpotter);
@@ -19,11 +23,14 @@ class WaitForGoal extends RoboCommand
 
     protected void initialize()
     {
+		executeCount = 0;
+		visionTargetSpotter.reset();
     }
 
     protected void execute()
     {
 		visionTargetSpotter.analyzeCameraImage();
+		SmartDashboard.putNumber("Execute Count", ++executeCount);
     }
 
     protected boolean isFinished()

@@ -31,23 +31,19 @@ public class DriveWithJoysticks extends RoboCommand
         double calX     = OI.getInstance().getDriveX();
         double calY     = OI.getInstance().getDriveY(); 
         double calTwist = OI.getInstance().getDriveTwist(); 
-        
-//        SmartDashboard.putNumber(" x ", calX);
-//        SmartDashboard.putNumber(" y ", calY);
-//        SmartDashboard.putNumber(" Twist ", calTwist);
 
         calX     = dampingFactor*calX*calX*calX             + (1-dampingFactor)*calX; 
         calY     = dampingFactor*calY*calY*calY             + (1-dampingFactor)*calY; 
         calTwist = dampingFactor*calTwist*calTwist*calTwist + (1-dampingFactor)*calTwist; 
 
-        SmartDashboard.putNumber(" damp x ", calX);
-        SmartDashboard.putNumber(" damp y ", calY);
-        SmartDashboard.putNumber(" damp Twist ", calTwist);
-        
-        driveTrain.drivePolar(
-            Math.sqrt((calY * calY) + (calX * calX)),           //Magnitude
-            Math.toDegrees(MathUtils.atan2(calY, calX)) + 90,   //Angle
-            calTwist);                                          //Rotation
+		double magnitude = Math.sqrt((calY * calY) + (calX * calX));
+		double direction = Math.toDegrees(MathUtils.atan2(calY, calX)) + 90;
+		
+        SmartDashboard.putNumber(" magnitude ", magnitude);
+        SmartDashboard.putNumber(" direction ", direction);
+        SmartDashboard.putNumber(" rotation ", calTwist);
+
+        driveTrain.drivePolar(magnitude, direction, calTwist);
     }
     
     // This command never finishes.

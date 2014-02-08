@@ -5,6 +5,7 @@
 package net.pvschools.robotics.javabot.practice;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import net.pvschools.robotics.javabot.practice.commands.RunAutonomous;
@@ -23,6 +24,8 @@ public class JavaBot extends IterativeRobot
     int cntr2 = 0;
     
     //SocketPi raspberryPi = new SocketPi();
+	
+	private CommandGroup runAutonomous = new RunAutonomous();
 
     /** The command to be run during the autonomous session */
     public void robotInit()
@@ -39,7 +42,7 @@ public class JavaBot extends IterativeRobot
 
     public void autonomousInit()
     {
-        new RunAutonomous().start();
+        runAutonomous.start();
     }
 
     public void autonomousPeriodic()
