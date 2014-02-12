@@ -1,12 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The Piston class is for getting and opening different pistons on the Robot.
  */
 
 package net.pvschools.robotics.javabot.practice.Systems;
 
-import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.Solenoid;
 
 /**
@@ -15,22 +12,33 @@ import edu.wpi.first.wpilibj.Solenoid;
  */
 public class Piston
 {
-    private Relay relay;
-    private Solenoid solenoid;
+    private final Solenoid solenoidOut;
+    private final Solenoid solenoidIn;
     
-    public Piston(int relayPort, int solenoidPort){
-        this.relay = new Relay(relayPort);
-        this.solenoid = new Solenoid(solenoidPort);
+    public Piston(int solenoidInPort, int solenoidOutPort)
+    {
+        this.solenoidIn = new Solenoid(solenoidInPort);
+        this.solenoidOut = new Solenoid(solenoidOutPort);
     }
     
-    public Relay getRelay()
+    public void open()
     {
-        return relay;
+        solenoidIn.set(true);
+        solenoidOut.set(false);
     }
     
-    public Solenoid getSolenoid()
+    public void close()
     {
-        return solenoid;
+        solenoidIn.set(false);
+        solenoidOut.set(true);
+    }
+    
+    public Solenoid getInSolenoid(){
+        return solenoidIn;
+    }
+    
+    public Solenoid getOutSolenoid(){
+        return solenoidOut;
     }
     
 }

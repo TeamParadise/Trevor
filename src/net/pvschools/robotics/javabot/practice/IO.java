@@ -1,5 +1,5 @@
 /*
- *Input and output drivers for the robot.
+ * Input and output drivers for the robot.
  */
 
 package net.pvschools.robotics.javabot.practice;
@@ -18,12 +18,20 @@ public class IO
     private static IO instance = new IO();
     
     private final Compressor compressor = new Compressor(Map.compressorSwitch, Map.compressorRelay);
-    private final Piston[] pistons = {new Piston(Map.shooterRelay, Map.shooterSolenoid)};
     private final Gyro gyro = new Gyro(Map.gyroPort);
     private final VisionTargetSpotter vp = new VisionTargetSpotter();
     
+    //Pistons
+    private final Piston kickerPiston = new Piston(Map.kickerPistonArmIn, Map.kickerPistonArmOut);
+    private final Piston latchPiston = new Piston(Map.latchPistonArmIn, Map.latchPistonArmOut);
+    private final Piston pickupExtensionPiston = new Piston(Map.pickupPistonsIn, Map.pickupPistonsOut);
+    private final Piston returnPiston = new Piston(Map.returnPistonArmIn, Map.returnPistonArmOut);
+    private final Piston lifterPiston = new Piston(Map.returnPistonArmIn, Map.returnPistonArmOut);
+    private final Piston sideArmPiston = new Piston(Map.extendingPistonArmIn, Map.extendingPistonArmOut);
+    
     private IO()
     {
+        
     }
     
     public Gyro getGyro()
@@ -31,15 +39,7 @@ public class IO
         return gyro;
     }
     
-    public Piston getPiston(int index)
-    {
-        return pistons[index];
-    }
     
-    public Piston[] getPistons()
-    {
-        return pistons;
-    }
     
     public Compressor getCompressor()
     {
@@ -54,5 +54,29 @@ public class IO
     public VisionTargetSpotter getVisionProcess()
     {
         return vp;
+    }
+    
+    public Piston getKickerPiston(){
+        return kickerPiston;
+    }
+    
+    public Piston getLatchPiston(){
+        return latchPiston;
+    }
+    
+    public Piston getPickupPiston(){
+        return pickupExtensionPiston;
+    }
+    
+    public Piston getReturnPiston(){
+        return returnPiston;
+    }
+    
+    public Piston getRampLiftPiston(){
+        return lifterPiston;
+    }
+    
+    public Piston getSideArmPiston(){
+        return sideArmPiston;
     }
 }
