@@ -44,11 +44,25 @@ public class DriveTrain extends PIDSubsystem
         return 0D;
     }
     
+    /**
+     * Drives in a Cartesian coordinate field
+     * @deprecated 
+     * @param x         X "speed"
+     * @param y         Y "speed"
+     * @param twist     Spin "speed"
+     * @param gyroAngle Gyro angle
+     */
     public void driveCartesian(double x, double y, double twist, double gyroAngle)
     {
         drive.mecanumDrive_Cartesian(x, y, twist, gyroAngle);
     }    
     
+    /**
+     * Drives in a polar coordinate field
+     * @param magnitude "Speed"
+     * @param direction Angle in degrees
+     * @param rotation  Spin "speed"
+     */
     public void drivePolar(double magnitude, double direction, double rotation)
     {
         drive.mecanumDrive_Polar(magnitude, direction, rotation);

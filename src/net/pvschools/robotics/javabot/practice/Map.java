@@ -9,7 +9,7 @@ package net.pvschools.robotics.javabot.practice;
  * @author student
  */
 public class Map {
-   //Wheel motors
+   // Wheel motors
    public static final int frontleft             = 1;
    public static final int frontright            = 2;
    public static final int backleft              = 3;

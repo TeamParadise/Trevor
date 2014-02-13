@@ -26,7 +26,7 @@ public class DriveWithJoysticks extends RoboCommand
 
     protected void execute() 
     { 
-        double dampingFactor = OI.getInstance().getDamping();       // Between 0 and 1; 0 = No damping 
+        double dampingFactor = OI.getInstance().getDampening();       // Between 0 and 1; 0 = No damping 
 
         double calX     = OI.getInstance().getDriveX();
         double calY     = OI.getInstance().getDriveY(); 
@@ -62,7 +62,7 @@ public class DriveWithJoysticks extends RoboCommand
         stop();
     }
     
-    // Stop all drive motion.
+    /** Stop all drive motion */
     private void stop()
     {
         driveTrain.drivePolar(0, 0, 0);

@@ -14,23 +14,32 @@ public class OI
 
     private final Joystick mainJoystick = new Joystick(Map.joystickPort);
     
-    //Buttons
-    private final Button button1 = new JoystickButton(mainJoystick, 1); //Shoot
-    private final Button button2 = new JoystickButton(mainJoystick, 2); //Extend Pickup (keep extended while held)
-    private final Button button3 = new JoystickButton(mainJoystick, 3); //Side Arms Down
-    private final Button button4 = new JoystickButton(mainJoystick, 4); //Ramp Down
-    private final Button button5 = new JoystickButton(mainJoystick, 5); //Side Arms Up
-    private final Button button6 = new JoystickButton(mainJoystick, 6); //Ramp Up
+    /** Shoot */
+    private final Button button1 = new JoystickButton(mainJoystick, 1);
+    
+    /** Extend Feed <p> Keep Extended while holding
+     */
+    private final Button button2 = new JoystickButton(mainJoystick, 2);
+    
+    /** Side Arms Down */
+    private final Button button3 = new JoystickButton(mainJoystick, 3);
+    
+    /** Side Arms Up */
+    private final Button button5 = new JoystickButton(mainJoystick, 5);
+    
+    /** Ramp Down */
+    private final Button button4 = new JoystickButton(mainJoystick, 4);
+    
+    /** Ramp Up */
+    private final Button button6 = new JoystickButton(mainJoystick, 6);
 
     private OI()
     {
         SmartDashboard.putNumber("Dampening", .5); 
-        
         //Button Command Initialization
-        
     }
     
-    public double getDamping()
+    public double getDampening()
     {
         return SmartDashboard.getNumber("Dampening");
     }

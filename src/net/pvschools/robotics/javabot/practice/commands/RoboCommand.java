@@ -16,7 +16,6 @@ public abstract class RoboCommand extends Command
     {
     }
 
-    // Automatically created constructors.
     public RoboCommand(String name)
     {
         super(name);

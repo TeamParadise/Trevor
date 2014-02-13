@@ -22,7 +22,11 @@ public class DriveDirectional extends RoboCommand
 	private String directionKey = null;
 	private String timeoutKey = null;
     
-    // Specifies speed and direction to drive the robot.
+    /** Specifies speed and direction to drive the robot
+     * 
+     * @param magnitude "Speed"
+     * @param direction Direction in degrees
+     */
     public DriveDirectional(double magnitude, double direction)
     {
         requires(driveTrain);
@@ -30,7 +34,12 @@ public class DriveDirectional extends RoboCommand
         this.direction = direction;
     }
 
-    // Uses values from the smart dashboard to drive the robot.
+    /** 
+     * Uses values from the smart dashboard to drive the robot
+     * @param magnitudeKey
+     * @param directionKey
+     * @param timeoutKey 
+     */
     public DriveDirectional(String magnitudeKey, String directionKey, String timeoutKey)
     {
         requires(driveTrain);
@@ -76,7 +85,7 @@ public class DriveDirectional extends RoboCommand
         stop();
     }
     
-    // Stop all drive motion.
+    /** Stop all drive motion */
     private void stop()
     {
         driveTrain.drivePolar(0, 0, 0);
