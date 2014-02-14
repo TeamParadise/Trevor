@@ -22,9 +22,9 @@ public class Ramp extends RoboCommand {
 
     protected void initialize() {
         if(isRaising){
-            IO.getInstance().getRampLiftPiston().open();
+            IO.getInstance().getRampLiftPiston().extend();
         }else{
-            IO.getInstance().getRampLiftPiston().close();
+            IO.getInstance().getRampLiftPiston().retract();
         }
     }
 

@@ -7,7 +7,9 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import net.pvschools.robotics.javabot.practice.commands.InfeedPickupExtend;
+import net.pvschools.robotics.javabot.practice.commands.PickupPress;
+import net.pvschools.robotics.javabot.practice.commands.PickupRelease;
+import net.pvschools.robotics.javabot.practice.commands.Shoot;
 
 public class OI
 {
@@ -37,7 +39,11 @@ public class OI
     {
         SmartDashboard.putNumber("Dampening", .5); 
         //Button Command Initialization
-        button2.whenPressed(new InfeedPickupExtend());
+        button2.whenPressed(new PickupPress());
+        button2.whenReleased(new PickupRelease());
+        
+        button1.whenPressed(new Shoot(button5.get()));
+        
     }
     
     public double getDampening()

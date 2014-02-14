@@ -19,7 +19,7 @@ public class InfeedPickupRetract extends RoboCommand {
     }
 
     protected void initialize() {
-        IO.getInstance().getPickupPiston().close();
+        IO.getInstance().getPickupPiston().retract();
     }
 
     protected void execute() {

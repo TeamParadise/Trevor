@@ -32,10 +32,10 @@ public class PistonCommand extends RoboCommand {
     {
         if(isOpening) 
         {
-            piston.open();
+            piston.extend();
         } else 
         {
-            piston.close();
+            piston.retract();
         }
     }
 

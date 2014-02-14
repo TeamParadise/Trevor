@@ -22,9 +22,9 @@ public class Arms extends RoboCommand {
 
     protected void initialize() {
         if(!isOpening){
-            IO.getInstance().getSideArmPiston().open();
+            IO.getInstance().getSideArmPiston().extend();
         }else{
-            IO.getInstance().getSideArmPiston().close();
+            IO.getInstance().getSideArmPiston().retract();
         }
     }
 

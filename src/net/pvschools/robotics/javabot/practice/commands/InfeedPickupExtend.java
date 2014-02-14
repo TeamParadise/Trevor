@@ -22,7 +22,7 @@ public class InfeedPickupExtend extends RoboCommand {
     }
 
     protected void initialize() {
-        IO.getInstance().getPickupPiston().open();
+        IO.getInstance().getPickupPiston().extend();
         IO.getInstance().getFeedRoller().set(motorSpeed);
     }
 

@@ -23,13 +23,13 @@ public class Piston
         this.waitMillis = waitMillis;
     }
     
-    public void open()
+    public void extend()
     {
         solenoidIn.set(true);
         solenoidOut.set(false);
     }
     
-    public void close()
+    public void retract()
     {
         solenoidIn.set(false);
         solenoidOut.set(true);
@@ -60,7 +60,6 @@ public class Piston
             try {
                 Thread.sleep(waitMillis);
             } catch (InterruptedException ex) {
-                ex.printStackTrace();
             }
             idle();
         }
