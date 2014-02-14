@@ -6,7 +6,6 @@ package net.pvschools.robotics.javabot.practice;
 
 import net.pvschools.robotics.javabot.practice.Systems.VisionTargetSpotter;
 import edu.wpi.first.wpilibj.Compressor;
-import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.Talon;
 import net.pvschools.robotics.javabot.practice.Systems.Piston;
 
@@ -19,7 +18,6 @@ public class IO
     private static IO instance = new IO();
     
     private final Compressor compressor = new Compressor(Map.compressorSwitch,  Map.compressorRelay);
-    private final Gyro gyro = new Gyro(Map.gyroPort);
     private final VisionTargetSpotter vp = new VisionTargetSpotter();
     private final Talon feedRoller = new Talon(Map.feedMotor);
     
@@ -34,13 +32,6 @@ public class IO
     private IO()
     {
     }
-    
-    public Gyro getGyro()
-    {
-        return gyro;
-    }
-    
-    
     
     public Compressor getCompressor()
     {

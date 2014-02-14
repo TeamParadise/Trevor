@@ -24,7 +24,6 @@ public class JavaBot extends IterativeRobot
     /** The command to be run during the autonomous session */
     public void robotInit()
     {
-        IO.getInstance().getGyro().reset();
         IO.getInstance().getCompressor().start();
     }
 
@@ -41,7 +40,7 @@ public class JavaBot extends IterativeRobot
     /** Run as an initial command before starting Operator Control */
     public void teleopInit()
     {
-        IO.getInstance().getGyro().reset();
+
     }
 
     public void teleopPeriodic()
@@ -49,8 +48,6 @@ public class JavaBot extends IterativeRobot
         Scheduler.getInstance().run();
         SmartDashboard.putString(" message ", "latest version");
 
-        double angle = IO.getInstance().getGyro().getAngle();
-        SmartDashboard.putNumber(" Gyro ", angle);
         SmartDashboard.putNumber("Watchdog ", getWatchdog().getTimer());
         SmartDashboard.putNumber(" Periodic ", cntr2);
 
