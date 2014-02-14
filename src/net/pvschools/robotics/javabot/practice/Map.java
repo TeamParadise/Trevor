@@ -15,6 +15,9 @@ public class Map {
    public static final int backleft              = 3;
    public static final int backright             = 4;
    
+   //Feed Motor
+   public static final int feedMotor             = 5;
+   
    //Joystick Ports
    public static final int joystickPort          = 1;
            

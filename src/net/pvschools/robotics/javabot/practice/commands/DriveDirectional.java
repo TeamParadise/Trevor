@@ -16,22 +16,26 @@ public class DriveDirectional extends RoboCommand
 {
     private double magnitude;
     private double direction;
+    private double rotation;
 	
 	// The following are smart dashboard keys:
 	private String magnitudeKey = null;
 	private String directionKey = null;
 	private String timeoutKey = null;
+        private String rotationKey = null;
     
     /** Specifies speed and direction to drive the robot
      * 
      * @param magnitude "Speed"
      * @param direction Direction in degrees
+     * @param rotation
      */
-    public DriveDirectional(double magnitude, double direction)
+    public DriveDirectional(double magnitude, double direction, double rotation)
     {
         requires(driveTrain);
         this.magnitude = magnitude;
         this.direction = direction;
+        this.rotation = rotation;
     }
 
     /** 
@@ -39,12 +43,14 @@ public class DriveDirectional extends RoboCommand
      * @param magnitudeKey
      * @param directionKey
      * @param timeoutKey 
+     * @param rotationKey 
      */
-    public DriveDirectional(String magnitudeKey, String directionKey, String timeoutKey)
+    public DriveDirectional(String magnitudeKey, String directionKey, String timeoutKey, String rotationKey)
     {
         requires(driveTrain);
         this.magnitudeKey = magnitudeKey;
         this.directionKey = directionKey;
+        this.rotationKey = rotationKey;
 		this.timeoutKey = timeoutKey;
     }
 
@@ -56,6 +62,7 @@ public class DriveDirectional extends RoboCommand
 		{
 			magnitude = SmartDashboard.getNumber(magnitudeKey);
 			direction = SmartDashboard.getNumber(directionKey);
+			rotation = SmartDashboard.getNumber(rotationKey);
 			setTimeout(SmartDashboard.getNumber(timeoutKey));
 		}
     }
@@ -63,7 +70,7 @@ public class DriveDirectional extends RoboCommand
     // Called repeatedly when this Command is scheduled to run
     protected void execute()
     {
-        driveTrain.drivePolar(magnitude, direction, 0);
+        driveTrain.drivePolar(magnitude, direction, rotation);
     }
 
     // Note that when there is no timeout value set, this will return false.
