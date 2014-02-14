@@ -14,8 +14,8 @@ import net.pvschools.robotics.javabot.practice.IO;
  */
 public class SideArmPiston extends PistonCommand {
 
-    public SideArmPiston(boolean isOpening) {
-        super(isOpening, IO.getInstance().getSideArmPiston());
+    public SideArmPiston(boolean isExtending) {
+        super(isExtending, IO.getInstance().getSideArmPiston());
     }
     
 }

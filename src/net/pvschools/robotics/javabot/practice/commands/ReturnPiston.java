@@ -14,8 +14,8 @@ import net.pvschools.robotics.javabot.practice.IO;
  */
 public class ReturnPiston extends PistonCommand {
 
-    public ReturnPiston(boolean isOpening) {
-        super(isOpening, IO.getInstance().getReturnPiston());
+    public ReturnPiston(boolean isExtending) {
+        super(isExtending, IO.getInstance().getReturnPiston());
     }
     
 }

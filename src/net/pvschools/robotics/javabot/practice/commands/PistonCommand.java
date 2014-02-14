@@ -14,23 +14,23 @@ import net.pvschools.robotics.javabot.practice.Systems.Piston;
  */
 public class PistonCommand extends RoboCommand {
     
-    private boolean isOpening;
+    private boolean isExtending;
     private Piston piston;
     
-    public PistonCommand(boolean isOpening, Piston piston){
+    public PistonCommand(boolean isExtending, Piston piston){
         this.piston = piston;
-        this.isOpening = isOpening;
+        this.isExtending = isExtending;
     }
     
-    public PistonCommand(boolean isOpening, Piston piston, double timeOut){
+    public PistonCommand(boolean isExtending, Piston piston, double timeOut){
         this.piston = piston;
-        this.isOpening = isOpening;
+        this.isExtending = isExtending;
         this.setTimeout(timeOut);
     }
 
     protected void initialize() 
     {
-        if(isOpening) 
+        if(isExtending) 
         {
             piston.extend();
         } else 

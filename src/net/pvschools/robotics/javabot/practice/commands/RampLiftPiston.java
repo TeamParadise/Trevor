@@ -14,8 +14,8 @@ import net.pvschools.robotics.javabot.practice.IO;
  */
 public class RampLiftPiston extends PistonCommand {
 
-    public RampLiftPiston(boolean isOpening) {
-        super(isOpening, IO.getInstance().getRampLiftPiston());
+    public RampLiftPiston(boolean isExtending) {
+        super(isExtending, IO.getInstance().getRampLiftPiston());
     }
     
 }

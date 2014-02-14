@@ -14,18 +14,18 @@ import net.pvschools.robotics.javabot.practice.IO;
  */
 public class Arms extends RoboCommand {
     
-    private boolean isOpening;
+    private boolean isExtending;
     
     /**
      * Opens and closes the arms
-     * @param isOpening True - Open; False - Close
+     * @param isExtending True - Open; False - Close
      */
-    public Arms(boolean isOpening){
-        this.isOpening = isOpening;
+    public Arms(boolean isExtending){
+        this.isExtending = isExtending;
     }
 
     protected void initialize() {
-        if(!isOpening){
+        if(!isExtending){
             IO.getInstance().getSideArmPiston().extend();
         }else{
             IO.getInstance().getSideArmPiston().retract();

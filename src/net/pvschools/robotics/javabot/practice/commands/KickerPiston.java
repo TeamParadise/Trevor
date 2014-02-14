@@ -14,12 +14,12 @@ import net.pvschools.robotics.javabot.practice.IO;
  */
 public class KickerPiston extends PistonCommand {
 
-    public KickerPiston(boolean isOpening, double timeOut) {
-        super(isOpening, IO.getInstance().getKickerPiston(), timeOut);
+    public KickerPiston(boolean isExtending, double timeOut) {
+        super(isExtending, IO.getInstance().getKickerPiston(), timeOut);
     }
 
-    public KickerPiston(boolean isOpening) {
-        super(isOpening, IO.getInstance().getKickerPiston());
+    public KickerPiston(boolean isExtending) {
+        super(isExtending, IO.getInstance().getKickerPiston());
     }
     
 }

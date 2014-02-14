@@ -14,12 +14,12 @@ import net.pvschools.robotics.javabot.practice.IO;
  */
 public class LatchPiston extends PistonCommand {
 
-    public LatchPiston(boolean isOpening, double timeOut) {
-        super(isOpening, IO.getInstance().getLatchPiston(), timeOut);
+    public LatchPiston(boolean isExtending, double timeOut) {
+        super(isExtending, IO.getInstance().getLatchPiston(), timeOut);
     }
 
-    public LatchPiston(boolean isOpening) {
-        super(isOpening, IO.getInstance().getLatchPiston());
+    public LatchPiston(boolean isExtending) {
+        super(isExtending, IO.getInstance().getLatchPiston());
     }
     
 }
