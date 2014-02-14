@@ -9,13 +9,17 @@ package net.pvschools.robotics.javabot.practice.commands;
 import net.pvschools.robotics.javabot.practice.IO;
 
 /**
- *
- * @author student
+ * Opens and closes the side arms
+ * @author Bryce
  */
 public class Arms extends RoboCommand {
     
     private boolean isOpening;
     
+    /**
+     * Opens and closes the arms
+     * @param isOpening True - Open; False - Close
+     */
     public Arms(boolean isOpening){
         this.isOpening = isOpening;
     }
