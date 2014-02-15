@@ -10,13 +10,13 @@ package net.pvschools.robotics.javabot.practice;
  */
 public class Map
 {
-   // Wheel motors
+   // Wheel motors: Digital I/O PWM
    public static final int frontleft             = 1;
    public static final int frontright            = 2;
    public static final int backleft              = 3;
    public static final int backright             = 4;
    
-   //Feed Motor
+   //Feed Motor: Digital I/O PWM
    public static final int feedMotor             = 5;
    
    //Joystick Ports
@@ -29,26 +29,39 @@ public class Map
    public static final int ultrasonic            = 4;
    
    //Compressor Ports
-   public static final int compressorSwitch      = 5;
-   public static final int compressorRelay       = 2;
+   public static final int compressorSwitch      = 1;   // Digital I/O
+   public static final int compressorRelay       = 1;   // relay
    
-   //Solenoid Ports
-   // TODO: Get proper port numbers!
-   public static final int pickupPistonsIn       = 1;
-   public static final int pickupPistonsOut      = 2;
+   // Solenoid Ports
+   // TODO: Are channel numbers on slot 3 off by one?
+   //       They are 0-based while channels on slot 7 are 1-based.
+   public static final int pickupPistonsInSlot       = 7;
+   public static final int pickupPistonsInChnl       = 3;
+   public static final int pickupPistonsOutSlot      = 7;
+   public static final int pickupPistonsOutChnl      = 6;
    
-   public static final int latchPistonIn         = 2;
-   public static final int latchPistonOut        = 3;
+   public static final int latchPistonInSlot         = 3;
+   public static final int latchPistonInChnl         = 4;
+   public static final int latchPistonOutSlot        = 3;
+   public static final int latchPistonOutChnl        = 1;
    
-   public static final int bigKickerPistonIn     = 4;
-   public static final int bigKickerPistonOut    = 5;
+   public static final int bigKickerPistonInSlot     = 3;
+   public static final int bigKickerPistonInChnl     = 5;
+   public static final int bigKickerPistonOutSlot    = 3;
+   public static final int bigKickerPistonOutChnl    = 2;
    
-   public static final int littleKickerPistonIn  = 6;
-   public static final int littleKickerPistonOut = 7;
+   public static final int littleKickerPistonInSlot  = 3;
+   public static final int littleKickerPistonInChnl  = 3;
+   public static final int littleKickerPistonOutSlot = 3;
+   public static final int littleKickerPistonOutChnl = 0;
    
-   public static final int rampPistonIn          = 8;
-   public static final int rampPistonOut         = 9;
+   public static final int rampPistonInSlot          = 7;
+   public static final int rampPistonInChnl          = 4;
+   public static final int rampPistonOutSlot         = 7;
+   public static final int rampPistonOutChnl         = 1;
    
-   public static final int catcherPistonIn       = 10;
-   public static final int catcherPistonOut      = 11;
+   public static final int catcherPistonInSlot       = 7;
+   public static final int catcherPistonInChnl       = 2;
+   public static final int catcherPistonOutSlot      = 7;
+   public static final int catcherPistonOutChnl      = 5;
 }

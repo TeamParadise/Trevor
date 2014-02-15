@@ -17,12 +17,23 @@ import net.pvschools.robotics.javabot.practice.commands.RoboCommand;
 public abstract class PistonCommand extends RoboCommand
 {
     /** Piston subsystems */
-    public static Piston bigKickerPiston     = new Piston(Map.bigKickerPistonIn,    Map.bigKickerPistonOut);
-    public static Piston littleKickerPiston  = new Piston(Map.littleKickerPistonIn, Map.littleKickerPistonOut);
-    public static Piston latchPiston         = new Piston(Map.latchPistonIn,        Map.latchPistonOut);
-    public static Piston pickupPistons       = new Piston(Map.pickupPistonsIn,      Map.pickupPistonsOut);
-    public static Piston rampPiston			 = new Piston(Map.rampPistonIn,         Map.rampPistonOut);
-    public static Piston catcherPiston       = new Piston(Map.catcherPistonIn,      Map.catcherPistonOut);
+    public static Piston bigKickerPiston =
+        new Piston(Map.bigKickerPistonInSlot, Map.bigKickerPistonInChnl, Map.bigKickerPistonOutSlot, Map.bigKickerPistonOutChnl);
+    
+    public static Piston littleKickerPiston =
+        new Piston(Map.littleKickerPistonInSlot, Map.littleKickerPistonInChnl, Map.littleKickerPistonOutSlot, Map.littleKickerPistonOutChnl);
+    
+    public static Piston latchPiston =
+        new Piston(Map.latchPistonInSlot, Map.latchPistonInChnl, Map.latchPistonOutSlot, Map.latchPistonOutChnl);
+    
+    public static Piston pickupPistons =
+        new Piston(Map.pickupPistonsInSlot, Map.pickupPistonsInChnl, Map.pickupPistonsOutSlot, Map.pickupPistonsOutChnl);
+    
+    public static Piston rampPiston =
+        new Piston(Map.rampPistonInSlot, Map.rampPistonInChnl, Map.rampPistonOutSlot, Map.rampPistonOutChnl);
+    
+    public static Piston catcherPiston =
+        new Piston(Map.catcherPistonInSlot, Map.catcherPistonInChnl, Map.catcherPistonOutSlot, Map.catcherPistonOutChnl);
     
     private boolean isExtending;
     private Piston piston;

@@ -23,6 +23,12 @@ public class Piston extends Subsystem
         this.solenoidOut = new Solenoid(solenoidOutPort);
     }
     
+    public Piston(int solenoidInSlot, int solenoidInPort, int solenoidOutSlot, int solenoidOutPort)
+    {
+        this.solenoidIn = new Solenoid(solenoidInSlot, solenoidInPort);
+        this.solenoidOut = new Solenoid(solenoidOutSlot, solenoidOutPort);
+    }
+    
     public void extend()
     {
         solenoidIn.set(true);

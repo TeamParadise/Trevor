@@ -33,7 +33,7 @@ public class PushFeedRollerSpeed extends RoboCommand
 
 	protected boolean isFinished()
 	{
-		return isTimedOut();
+		return true;
 	}
 
 	protected void end()
