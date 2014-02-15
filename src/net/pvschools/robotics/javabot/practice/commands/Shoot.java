@@ -30,9 +30,9 @@ public class Shoot extends CommandGroup
         /** Pull latch & shoot */
         addSequential(new OpenLatch(), (quickshot) ? 0.1 : 0.2);
         
-        addSequential(new ResetKicker(), 0.5);
+        addSequential(new ResetKicker(), 0.75);
         
-        addSequential(new CloseLatch(), 0.2);
+        addSequential(new CloseLatch(), 0.5);
                 
         addParallel(new ChargeKicker());
         addSequential(new CloseCatcher());

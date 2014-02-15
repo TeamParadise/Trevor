@@ -41,9 +41,9 @@ public class DriveWithJoysticks extends RoboCommand
 		
         SmartDashboard.putNumber(" magnitude ", magnitude);
         SmartDashboard.putNumber(" direction ", direction);
-        SmartDashboard.putNumber(" rotation ", calTwist);
+        SmartDashboard.putNumber(" rotation ", -calTwist);
 
-        driveTrain.drivePolar(magnitude, direction, calTwist);
+        driveTrain.drivePolar(magnitude, direction, -calTwist);
     }
     
     // This command never finishes.

@@ -28,15 +28,20 @@ public class JavaBot extends IterativeRobot
 
     /** The command to be run during the autonomous session */
     private final CommandGroup runAutonomous = new RunAutonomous();
+    
+    /* Required Operations
+    - System Pressurized
+    - Big Cylinder In
+    - Little Cylinder Out
+    - Latch Out
+    - Catcher Out
+    - Pickup In
+    - Ramp in
+    */
 
     public void robotInit()
     {
         IO.getInstance().getCompressor().start();
-        new CloseLatch().start();
-        new RetractPickup().start();
-        new LowerRamp().start();
-        new CloseCatcher().start();
-        new ResetKicker().start();
     }
 
     public void autonomousInit()

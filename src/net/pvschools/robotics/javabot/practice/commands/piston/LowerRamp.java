@@ -15,7 +15,8 @@ public class LowerRamp extends PistonCommand
 {
 	public LowerRamp()
 	{
-		super(rampPiston, extend);
+            //Backwards
+		super(rampPiston, retract);
 	}
 	
 	public LowerRamp(double timeout)

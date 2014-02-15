@@ -20,9 +20,9 @@ public class StopPickup extends CommandGroup
 {    
     public StopPickup()
 	{
+        addSequential(new SetFeedRollerSpeed(FeedRoller.stopSpeed));
+        addSequential(new RaiseRamp(), 0.5);
         addParallel(new CloseCatcher());
-        addSequential(new RaiseRamp(), 0.2);
-        addSequential(new RetractPickup(), 0.2);
-		addSequential(new SetFeedRollerSpeed(FeedRoller.stopSpeed));
+        addSequential(new RetractPickup(), 0.5);
     }
 }
