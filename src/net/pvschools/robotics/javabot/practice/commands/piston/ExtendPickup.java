@@ -15,7 +15,7 @@ public class ExtendPickup extends PistonCommand
 {
 	public ExtendPickup()
 	{
-		super(pickupPistons, extend);
+		super(pickupPistons, retract);
 	}
 	
 	public ExtendPickup(double timeout)

@@ -15,7 +15,7 @@ public class RetractPickup extends PistonCommand
 {
 	public RetractPickup()
 	{
-		super(pickupPistons, retract);
+		super(pickupPistons, extend);
 	}
 	
 	public RetractPickup(double timeout)
