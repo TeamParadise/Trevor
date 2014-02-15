@@ -2,7 +2,7 @@
  * The Piston class is for getting and opening different pistons on the Robot.
  */
 
-package net.pvschools.robotics.javabot.practice.Systems;
+package net.pvschools.robotics.javabot.practice.subsystems;
 
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;

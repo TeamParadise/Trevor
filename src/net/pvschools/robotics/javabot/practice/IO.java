@@ -4,10 +4,10 @@
 
 package net.pvschools.robotics.javabot.practice;
 
-import net.pvschools.robotics.javabot.practice.Systems.VisionTargetSpotter;
+import net.pvschools.robotics.javabot.practice.subsystems.VisionTargetSpotter;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Talon;
-import net.pvschools.robotics.javabot.practice.Systems.Piston;
+import net.pvschools.robotics.javabot.practice.subsystems.Piston;
 
 /**
  *

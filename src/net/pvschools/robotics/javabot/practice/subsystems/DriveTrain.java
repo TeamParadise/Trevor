@@ -1,7 +1,7 @@
 /*
  * Robotic Drive system.
  */
-package net.pvschools.robotics.javabot.practice.Systems;
+package net.pvschools.robotics.javabot.practice.subsystems;
 
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Talon;

@@ -7,7 +7,7 @@
 package net.pvschools.robotics.javabot.practice.commands.piston;
 
 import net.pvschools.robotics.javabot.practice.Map;
-import net.pvschools.robotics.javabot.practice.Systems.Piston;
+import net.pvschools.robotics.javabot.practice.subsystems.Piston;
 import net.pvschools.robotics.javabot.practice.commands.RoboCommand;
 
 /**

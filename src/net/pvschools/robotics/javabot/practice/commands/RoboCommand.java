@@ -4,9 +4,9 @@
 package net.pvschools.robotics.javabot.practice.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import net.pvschools.robotics.javabot.practice.Systems.DriveTrain;
-import net.pvschools.robotics.javabot.practice.Systems.FeedRoller;
-import net.pvschools.robotics.javabot.practice.Systems.VisionTargetSpotter;
+import net.pvschools.robotics.javabot.practice.subsystems.DriveTrain;
+import net.pvschools.robotics.javabot.practice.subsystems.FeedRoller;
+import net.pvschools.robotics.javabot.practice.subsystems.VisionTargetSpotter;
 
 public abstract class RoboCommand extends Command
 {

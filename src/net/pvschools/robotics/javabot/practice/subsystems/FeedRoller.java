@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package net.pvschools.robotics.javabot.practice.Systems;
+package net.pvschools.robotics.javabot.practice.subsystems;
 
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
