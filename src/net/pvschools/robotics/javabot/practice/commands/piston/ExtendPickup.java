@@ -7,18 +7,18 @@
 package net.pvschools.robotics.javabot.practice.commands.piston;
 
 /**
- * Command to extend the right pickup piston.
+ * Command to extend the pickup pistons.
  * 
  * @author jkoehring
  */
-public class ExtendRightPickup extends PistonCommand
+public class ExtendPickup extends PistonCommand
 {
-	public ExtendRightPickup()
+	public ExtendPickup()
 	{
-		super(pickupRightPiston, extend);
+		super(pickupPistons, extend);
 	}
 	
-	public ExtendRightPickup(double timeout)
+	public ExtendPickup(double timeout)
 	{
 		this();
 		setTimeout(timeout);

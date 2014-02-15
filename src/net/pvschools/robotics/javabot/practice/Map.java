@@ -8,7 +8,8 @@ package net.pvschools.robotics.javabot.practice;
  *
  * @author student
  */
-public class Map {
+public class Map
+{
    // Wheel motors
    public static final int frontleft             = 1;
    public static final int frontright            = 2;
@@ -33,10 +34,8 @@ public class Map {
    
    //Solenoid Ports
    // TODO: Get proper port numbers!
-   public static final int pickupPistonLeftIn    = 1;
-   public static final int pickupPistonLeftOut   = 2;
-   public static final int pickupPistonRightIn   = 1;
-   public static final int pickupPistonRightOut  = 2;
+   public static final int pickupPistonsIn       = 1;
+   public static final int pickupPistonsOut      = 2;
    
    public static final int latchPistonIn         = 2;
    public static final int latchPistonOut        = 3;
@@ -52,5 +51,4 @@ public class Map {
    
    public static final int catcherPistonIn       = 10;
    public static final int catcherPistonOut      = 11;
-   
 }

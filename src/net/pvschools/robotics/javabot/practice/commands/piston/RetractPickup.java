@@ -7,18 +7,18 @@
 package net.pvschools.robotics.javabot.practice.commands.piston;
 
 /**
- * Command to retract the left pickup piston.
+ * Command to retract the pickup pistons.
  * 
  * @author jkoehring
  */
-public class RetractLeftPickup extends PistonCommand
+public class RetractPickup extends PistonCommand
 {
-	public RetractLeftPickup()
+	public RetractPickup()
 	{
-		super(pickupLeftPiston, retract);
+		super(pickupPistons, retract);
 	}
 	
-	public RetractLeftPickup(double timeout)
+	public RetractPickup(double timeout)
 	{
 		this();
 		setTimeout(timeout);

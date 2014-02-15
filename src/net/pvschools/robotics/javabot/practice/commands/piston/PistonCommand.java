@@ -20,10 +20,9 @@ public abstract class PistonCommand extends RoboCommand
     public static Piston bigKickerPiston     = new Piston(Map.bigKickerPistonIn,    Map.bigKickerPistonOut);
     public static Piston littleKickerPiston  = new Piston(Map.littleKickerPistonIn, Map.littleKickerPistonOut);
     public static Piston latchPiston         = new Piston(Map.latchPistonIn,        Map.latchPistonOut);
-    public static Piston pickupLeftPiston    = new Piston(Map.pickupPistonLeftIn,   Map.pickupPistonLeftOut);
-    public static Piston pickupRightPiston   = new Piston(Map.pickupPistonRightIn,  Map.pickupPistonRightOut);
+    public static Piston pickupPistons       = new Piston(Map.pickupPistonsIn,      Map.pickupPistonsOut);
     public static Piston rampPiston			 = new Piston(Map.rampPistonIn,         Map.rampPistonOut);
-    public static Piston catcherPiston       = new Piston(Map.catcherPistonIn,    Map.catcherPistonOut);
+    public static Piston catcherPiston       = new Piston(Map.catcherPistonIn,      Map.catcherPistonOut);
     
     private boolean isExtending;
     private Piston piston;
