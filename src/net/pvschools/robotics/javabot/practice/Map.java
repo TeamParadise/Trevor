@@ -33,8 +33,9 @@ public class Map
    public static final int compressorRelay       = 1;   // relay
    
    // Solenoid Ports
-   // TODO: Are channel numbers on slot 3 off by one?
-   //       They are 0-based while channels on slot 7 are 1-based.
+   // Solenoid ports are referenced by MODULE and channel.
+   // The solenoid module in slot 3 is module 1.
+   // The solenoid module in slot 7 is module 2.
    public static final int pickupPistonsInSlot       = 2;
    public static final int pickupPistonsInChnl       = 3;
    public static final int pickupPistonsOutSlot      = 2;

@@ -6,15 +6,13 @@
 
 package net.pvschools.robotics.javabot.practice.commands;
 
-import net.pvschools.robotics.javabot.practice.subsystems.FeedRoller;
-
 /**
  *
  * @author jkoehring
  */
 public class SetFeedRollerSpeed extends RoboCommand
 {
-	private double speed;
+	private final double speed;
 	
 	public SetFeedRollerSpeed(double speed)
 	{

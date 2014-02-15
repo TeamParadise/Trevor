@@ -7,10 +7,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import net.pvschools.robotics.javabot.practice.commands.ChargeKicker;
-import net.pvschools.robotics.javabot.practice.subsystems.FeedRoller;
-import net.pvschools.robotics.javabot.practice.commands.PopFeedRollerSpeed;
-import net.pvschools.robotics.javabot.practice.commands.PushFeedRollerSpeed;
 import net.pvschools.robotics.javabot.practice.commands.StartPickup;
 import net.pvschools.robotics.javabot.practice.commands.StopPickup;
 import net.pvschools.robotics.javabot.practice.commands.Shoot;
@@ -29,7 +25,7 @@ import net.pvschools.robotics.javabot.practice.commands.piston.RetractPickup;
 
 public class OI
 {
-    private static OI instance = new OI();
+    private static final OI instance = new OI();
 
     private final Joystick mainJoystick = new Joystick(Map.joystickPort);
     

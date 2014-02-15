@@ -26,7 +26,7 @@ public class JavaBot extends IterativeRobot
     int cntr2 = 0;
 
     /** The command to be run during the autonomous session */
-    private CommandGroup runAutonomous = new RunAutonomous();
+    private final CommandGroup runAutonomous = new RunAutonomous();
 
     public void robotInit()
     {
@@ -37,7 +37,6 @@ public class JavaBot extends IterativeRobot
         new RetractPickup().start();
         new LowerRamp().start();
         new CloseCatcher().start();
-        
     }
 
     public void autonomousInit()

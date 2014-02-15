@@ -35,8 +35,8 @@ public abstract class PistonCommand extends RoboCommand
     public static Piston catcherPiston =
         new Piston(Map.catcherPistonInSlot, Map.catcherPistonInChnl, Map.catcherPistonOutSlot, Map.catcherPistonOutChnl);
     
-    private boolean isExtending;
-    private Piston piston;
+    private final boolean isExtending;
+    private final Piston piston;
 	
 	final static boolean extend = true;
 	final static boolean retract = false;
