@@ -1,0 +1,46 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package net.pvschools.robotics.javabot.practice.commands;
+
+import net.pvschools.robotics.javabot.practice.Systems.FeedRoller;
+
+/**
+ *
+ * @author jkoehring
+ */
+public class PushFeedRollerSpeed extends RoboCommand
+{
+	private double speed;
+	
+	public PushFeedRollerSpeed(double speed)
+	{
+		requires(feedRoller);
+		this.speed = speed;
+	}
+	
+	protected void initialize()
+	{
+		feedRoller.pushSpeed(speed);
+	}
+
+	protected void execute()
+	{
+	}
+
+	protected boolean isFinished()
+	{
+		return isTimedOut();
+	}
+
+	protected void end()
+	{
+	}
+
+	protected void interrupted()
+	{
+	}
+}

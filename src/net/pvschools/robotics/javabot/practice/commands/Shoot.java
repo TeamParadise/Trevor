@@ -6,41 +6,35 @@ package net.pvschools.robotics.javabot.practice.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
+import net.pvschools.robotics.javabot.practice.commands.piston.OpenCatcher;
+
+import net.pvschools.robotics.javabot.practice.commands.piston.OpenLatch;
+import net.pvschools.robotics.javabot.practice.commands.piston.CloseCatcher;
+import net.pvschools.robotics.javabot.practice.commands.piston.CloseLatch;
+
 /**
  *
- * @author Trever
+ * @author Trevor
  * @author Bryce
  */
 public class Shoot extends CommandGroup
 {
-    
-    private final boolean extend = true;
-    private final   boolean retract = false;
-    
     /** 
      * @since 12/21/2012
      * @param quickshot Shoot fast
      */
     public Shoot(boolean quickshot)
     {
-        addSequential(new Arms(true), .3);
+        addSequential(new OpenCatcher(), 0.2);
         
         /** Pull latch & shoot */
-        addSequential(new LatchPiston(retract), (quickshot) ? 0.5 : 1);
+        addSequential(new OpenLatch(), (quickshot) ? 0.1 : 0.2);
         
-        /** Reset Kickers */
-        addSequential(new KickerPiston(extend), 1);
-        addParallel(new ReturnPiston(retract));
+        addSequential(new ResetKicker(), 0.5);
         
-        /** Close Latch */
-        addSequential(new LatchPiston(extend), 0.5);
+        addSequential(new CloseLatch(), 0.2);
                 
-        /** Charge pistons */
-        addSequential(new KickerPiston(retract));
-        addParallel(new ReturnPiston(extend));
-        
-        
-        addSequential(new Arms(false));
+        addParallel(new ChargeKicker());
+        addSequential(new CloseCatcher());
     }
-    
 }

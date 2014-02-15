@@ -5,22 +5,22 @@
 package net.pvschools.robotics.javabot.practice.Systems;
 
 import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- *
+ * THis is a generic piston subsystem.
+ * 
  * @author Trevor
  */
-public class Piston
+public class Piston extends Subsystem
 {
     private final Solenoid solenoidOut;
     private final Solenoid solenoidIn;
-    private final long waitMillis;
     
-    public Piston(int solenoidInPort, int solenoidOutPort, long waitMillis)
+    public Piston(int solenoidInPort, int solenoidOutPort)
     {
         this.solenoidIn = new Solenoid(solenoidInPort);
         this.solenoidOut = new Solenoid(solenoidOutPort);
-        this.waitMillis = waitMillis;
     }
     
     public void extend()
@@ -41,11 +41,6 @@ public class Piston
         solenoidOut.set(false);
     }
     
-    public void idleWhenReady(){
-        Thread idleWhenReady = new IdleWhenReady();
-        idleWhenReady.start();
-    }
-    
     public Solenoid getInSolenoid(){
         return solenoidIn;
     }
@@ -53,17 +48,8 @@ public class Piston
     public Solenoid getOutSolenoid(){
         return solenoidOut;
     }
-    
-    private class IdleWhenReady extends Thread {
-        
-        public void run(){
-            try {
-                Thread.sleep(waitMillis);
-            } catch (InterruptedException ex) {
-            }
-            idle();
-        }
-        
-    }
-    
+
+	protected void initDefaultCommand()
+	{
+	}
 }

@@ -32,22 +32,25 @@ public class Map {
    public static final int compressorRelay       = 2;
    
    //Solenoid Ports
-   public static final int pickupPistonsIn       = 1;
-   public static final int pickupPistonsOut      = 2;
+   // TODO: Get proper port numbers!
+   public static final int pickupPistonLeftIn    = 1;
+   public static final int pickupPistonLeftOut   = 2;
+   public static final int pickupPistonRightIn   = 1;
+   public static final int pickupPistonRightOut  = 2;
    
-   public static final int latchPistonArmIn      = 2;
-   public static final int latchPistonArmOut     = 3;
+   public static final int latchPistonIn         = 2;
+   public static final int latchPistonOut        = 3;
    
-   public static final int kickerPistonArmIn     = 4;
-   public static final int kickerPistonArmOut    = 5;
+   public static final int bigKickerPistonIn     = 4;
+   public static final int bigKickerPistonOut    = 5;
    
-   public static final int returnPistonArmIn     = 6;
-   public static final int returnPistonArmOut    = 7;
+   public static final int littleKickerPistonIn  = 6;
+   public static final int littleKickerPistonOut = 7;
    
-   public static final int liftPistonArmIn       = 8;
-   public static final int liftPistonArmOut      = 9;
+   public static final int rampPistonIn          = 8;
+   public static final int rampPistonOut         = 9;
    
-   public static final int extendingPistonArmIn  = 10;
-   public static final int extendingPistonArmOut = 11;
+   public static final int catcherPistonIn       = 10;
+   public static final int catcherPistonOut      = 11;
    
 }
