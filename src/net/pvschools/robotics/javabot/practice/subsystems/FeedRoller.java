@@ -18,8 +18,8 @@ public class FeedRoller extends Subsystem
 {
     private final Talon feedRoller = new Talon(Map.feedMotor);
 	
-	public static double feedSpeed = 0.8;
-	public static double spewSpeed = -0.8; // in case we need to regurgitate a ball
+	public static double feedSpeed = -0.8;
+	public static double spewSpeed = 0.8; // in case we need to regurgitate a ball
 	public static double stopSpeed = 0.0;
 	
 	private double speed = 0.0;

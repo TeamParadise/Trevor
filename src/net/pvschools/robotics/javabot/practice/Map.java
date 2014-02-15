@@ -35,33 +35,33 @@ public class Map
    // Solenoid Ports
    // TODO: Are channel numbers on slot 3 off by one?
    //       They are 0-based while channels on slot 7 are 1-based.
-   public static final int pickupPistonsInSlot       = 7;
+   public static final int pickupPistonsInSlot       = 2;
    public static final int pickupPistonsInChnl       = 3;
-   public static final int pickupPistonsOutSlot      = 7;
+   public static final int pickupPistonsOutSlot      = 2;
    public static final int pickupPistonsOutChnl      = 6;
    
-   public static final int latchPistonInSlot         = 3;
-   public static final int latchPistonInChnl         = 4;
-   public static final int latchPistonOutSlot        = 3;
-   public static final int latchPistonOutChnl        = 1;
+   public static final int latchPistonInSlot         = 1;
+   public static final int latchPistonInChnl         = 5;
+   public static final int latchPistonOutSlot        = 1;
+   public static final int latchPistonOutChnl        = 2;
    
-   public static final int bigKickerPistonInSlot     = 3;
-   public static final int bigKickerPistonInChnl     = 5;
-   public static final int bigKickerPistonOutSlot    = 3;
-   public static final int bigKickerPistonOutChnl    = 2;
+   public static final int bigKickerPistonInSlot     = 1;
+   public static final int bigKickerPistonInChnl     = 6;
+   public static final int bigKickerPistonOutSlot    = 1;
+   public static final int bigKickerPistonOutChnl    = 3;
    
-   public static final int littleKickerPistonInSlot  = 3;
-   public static final int littleKickerPistonInChnl  = 3;
-   public static final int littleKickerPistonOutSlot = 3;
-   public static final int littleKickerPistonOutChnl = 0;
+   public static final int littleKickerPistonInSlot  = 1;
+   public static final int littleKickerPistonInChnl  = 4;
+   public static final int littleKickerPistonOutSlot = 1;
+   public static final int littleKickerPistonOutChnl = 1;
    
-   public static final int rampPistonInSlot          = 7;
+   public static final int rampPistonInSlot          = 2;
    public static final int rampPistonInChnl          = 4;
-   public static final int rampPistonOutSlot         = 7;
+   public static final int rampPistonOutSlot         = 2;
    public static final int rampPistonOutChnl         = 1;
    
-   public static final int catcherPistonInSlot       = 7;
+   public static final int catcherPistonInSlot       = 2;
    public static final int catcherPistonInChnl       = 2;
-   public static final int catcherPistonOutSlot      = 7;
+   public static final int catcherPistonOutSlot      = 2;
    public static final int catcherPistonOutChnl      = 5;
 }

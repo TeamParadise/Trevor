@@ -17,17 +17,17 @@ import net.pvschools.robotics.javabot.practice.commands.RoboCommand;
 public abstract class PistonCommand extends RoboCommand
 {
     /** Piston subsystems */
-    public static Piston bigKickerPiston =
-        new Piston(Map.bigKickerPistonInSlot, Map.bigKickerPistonInChnl, Map.bigKickerPistonOutSlot, Map.bigKickerPistonOutChnl);
+    public static Piston pickupPistons =
+        new Piston(Map.pickupPistonsInSlot, Map.pickupPistonsInChnl, Map.pickupPistonsOutSlot, Map.pickupPistonsOutChnl);
     
     public static Piston littleKickerPiston =
         new Piston(Map.littleKickerPistonInSlot, Map.littleKickerPistonInChnl, Map.littleKickerPistonOutSlot, Map.littleKickerPistonOutChnl);
     
+    public static Piston bigKickerPiston =
+        new Piston(Map.bigKickerPistonInSlot, Map.bigKickerPistonInChnl, Map.bigKickerPistonOutSlot, Map.bigKickerPistonOutChnl);
+    
     public static Piston latchPiston =
         new Piston(Map.latchPistonInSlot, Map.latchPistonInChnl, Map.latchPistonOutSlot, Map.latchPistonOutChnl);
-    
-    public static Piston pickupPistons =
-        new Piston(Map.pickupPistonsInSlot, Map.pickupPistonsInChnl, Map.pickupPistonsOutSlot, Map.pickupPistonsOutChnl);
     
     public static Piston rampPiston =
         new Piston(Map.rampPistonInSlot, Map.rampPistonInChnl, Map.rampPistonOutSlot, Map.rampPistonOutChnl);

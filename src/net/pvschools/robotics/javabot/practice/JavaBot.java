@@ -7,7 +7,13 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import net.pvschools.robotics.javabot.practice.commands.ChargeKicker;
 import net.pvschools.robotics.javabot.practice.commands.RunAutonomous;
+import net.pvschools.robotics.javabot.practice.commands.StopPickup;
+import net.pvschools.robotics.javabot.practice.commands.piston.CloseCatcher;
+import net.pvschools.robotics.javabot.practice.commands.piston.CloseLatch;
+import net.pvschools.robotics.javabot.practice.commands.piston.LowerRamp;
+import net.pvschools.robotics.javabot.practice.commands.piston.RetractPickup;
 
 /**
  *
@@ -19,12 +25,19 @@ public class JavaBot extends IterativeRobot
     int cntr = 0;
     int cntr2 = 0;
 
+    /** The command to be run during the autonomous session */
     private CommandGroup runAutonomous = new RunAutonomous();
 
-    /** The command to be run during the autonomous session */
     public void robotInit()
     {
         IO.getInstance().getCompressor().start();
+        new CloseLatch().start();
+        new ChargeKicker().start();
+        new StopPickup().start();
+        new RetractPickup().start();
+        new LowerRamp().start();
+        new CloseCatcher().start();
+        
     }
 
     public void autonomousInit()

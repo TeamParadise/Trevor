@@ -7,12 +7,25 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import net.pvschools.robotics.javabot.practice.commands.ChargeKicker;
 import net.pvschools.robotics.javabot.practice.subsystems.FeedRoller;
 import net.pvschools.robotics.javabot.practice.commands.PopFeedRollerSpeed;
 import net.pvschools.robotics.javabot.practice.commands.PushFeedRollerSpeed;
 import net.pvschools.robotics.javabot.practice.commands.StartPickup;
 import net.pvschools.robotics.javabot.practice.commands.StopPickup;
 import net.pvschools.robotics.javabot.practice.commands.Shoot;
+import net.pvschools.robotics.javabot.practice.commands.piston.CloseCatcher;
+import net.pvschools.robotics.javabot.practice.commands.piston.CloseLatch;
+import net.pvschools.robotics.javabot.practice.commands.piston.ExtendBigKicker;
+import net.pvschools.robotics.javabot.practice.commands.piston.ExtendLittleKicker;
+import net.pvschools.robotics.javabot.practice.commands.piston.ExtendPickup;
+import net.pvschools.robotics.javabot.practice.commands.piston.LowerRamp;
+import net.pvschools.robotics.javabot.practice.commands.piston.OpenCatcher;
+import net.pvschools.robotics.javabot.practice.commands.piston.OpenLatch;
+import net.pvschools.robotics.javabot.practice.commands.piston.RaiseRamp;
+import net.pvschools.robotics.javabot.practice.commands.piston.RetractBigKicker;
+import net.pvschools.robotics.javabot.practice.commands.piston.RetractLittleKicker;
+import net.pvschools.robotics.javabot.practice.commands.piston.RetractPickup;
 
 public class OI
 {
@@ -38,8 +51,18 @@ public class OI
     /** Ramp Up */
     private final Button button6 = new JoystickButton(mainJoystick, 6);
     
-    /** Spew */
+    private final Button button7 = new JoystickButton(mainJoystick, 7);
+    
+    private final Button button8 = new JoystickButton(mainJoystick, 8);
+    
+    private final Button button9 = new JoystickButton(mainJoystick, 9);
+    
+    private final Button button10 = new JoystickButton(mainJoystick, 10);
+    
     private final Button button11 = new JoystickButton(mainJoystick, 11);
+    
+    /** Spew */
+    private final Button button12 = new JoystickButton(mainJoystick, 12);
 
     private OI()
     {
@@ -48,9 +71,22 @@ public class OI
         //Button Command Initialization
         button2.whenPressed(new StartPickup());
         button2.whenReleased(new StopPickup());
-		
-		button11.whenPressed(new PushFeedRollerSpeed(FeedRoller.spewSpeed));
-		button11.whenReleased(new PopFeedRollerSpeed());
+//		
+//		button11.whenPressed(new PushFeedRollerSpeed(FeedRoller.spewSpeed));
+//		button11.whenReleased(new PopFeedRollerSpeed());
+        
+        button7.whenPressed(new OpenCatcher());
+        button7.whenReleased(new CloseCatcher());
+        button8.whenPressed(new RaiseRamp());
+        button8.whenReleased(new LowerRamp());
+        button9.whenPressed(new ExtendPickup());
+        button9.whenReleased(new RetractPickup());
+        button10.whenPressed(new ExtendLittleKicker());
+        button10.whenReleased(new RetractLittleKicker());
+        button11.whenPressed(new ExtendBigKicker());
+        button11.whenReleased(new RetractBigKicker());
+        button12.whenPressed(new OpenLatch());
+        button12.whenReleased(new CloseLatch());
         
         button1.whenPressed(new Shoot(button5.get()));
     }
