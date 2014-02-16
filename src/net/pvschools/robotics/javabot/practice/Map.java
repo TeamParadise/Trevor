@@ -65,4 +65,8 @@ public class Map
    public static final int catcherPistonInChnl       = 5;
    public static final int catcherPistonOutSlot      = 2;
    public static final int catcherPistonOutChnl      = 2;
+
+   //Sonar Ports
+   public static final int SonarPingChannel      = 2;   // Digital I/O
+   public static final int SonarEchoChannel      = 3;   // Digital I/O
 }
