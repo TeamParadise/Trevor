@@ -16,7 +16,7 @@ public class OpenCatcher extends PistonCommand
 	public OpenCatcher()
 	{
             //Backwards
-		super(catcherPiston, extend);
+		super(catcherPiston, retract);
 	}
 	
 	public OpenCatcher(double timeout)
