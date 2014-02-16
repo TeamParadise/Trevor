@@ -62,7 +62,7 @@ public class Map
    public static final int rampPistonOutChnl         = 1;
    
    public static final int catcherPistonInSlot       = 2;
-   public static final int catcherPistonInChnl       = 2;
+   public static final int catcherPistonInChnl       = 5;
    public static final int catcherPistonOutSlot      = 2;
-   public static final int catcherPistonOutChnl      = 5;
+   public static final int catcherPistonOutChnl      = 2;
 }
