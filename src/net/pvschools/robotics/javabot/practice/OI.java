@@ -22,6 +22,7 @@ import net.pvschools.robotics.javabot.practice.commands.piston.RaiseRamp;
 import net.pvschools.robotics.javabot.practice.commands.piston.RetractBigKicker;
 import net.pvschools.robotics.javabot.practice.commands.piston.RetractLittleKicker;
 import net.pvschools.robotics.javabot.practice.commands.piston.RetractPickup;
+import net.pvschools.robotics.javabot.practice.subsystems.Sonar;
 
 public class OI
 {
@@ -70,6 +71,20 @@ public class OI
 //		
 //		button11.whenPressed(new PushFeedRollerSpeed(FeedRoller.spewSpeed));
 //		button11.whenReleased(new PopFeedRollerSpeed());
+//        private static Boolean catching;
+//        if (button12.get())
+//        {
+//           Sonar Sonar = new Sonar(Map.SonarPingChannel,Map.SonarEchoChannel);
+//           if (Sonar.getDistanceInInches()<13 and !catching)
+//           {
+//              CloseCatcher Catcher = new CloseCatcher();
+//              Catcher.start();
+//              catching = true;
+//           } else
+//           {
+//               catching = false;
+//           }
+//        }
         
         button7.whenPressed(new OpenCatcher());
         button7.whenReleased(new CloseCatcher());
@@ -85,6 +100,7 @@ public class OI
         button12.whenReleased(new CloseLatch());
         
         button1.whenPressed(new Shoot(button5.get()));
+        
     }
     
     public double getDampening()
