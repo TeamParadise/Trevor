@@ -47,19 +47,19 @@ public class Map
    public static final int latchPistonOutChnl          = 5;
    
    public static final int bigKickerPistonInModule     = 1;
-   public static final int bigKickerPistonInChnl       = 6;
+   public static final int bigKickerPistonInChnl       = 3;
    public static final int bigKickerPistonOutModule    = 1;
-   public static final int bigKickerPistonOutChnl      = 3;
+   public static final int bigKickerPistonOutChnl      = 6;
    
    public static final int littleKickerPistonInModule  = 1;
-   public static final int littleKickerPistonInChnl    = 4;
+   public static final int littleKickerPistonInChnl    = 1;
    public static final int littleKickerPistonOutModule = 1;
-   public static final int littleKickerPistonOutChnl   = 1;
+   public static final int littleKickerPistonOutChnl   = 4;
    
    public static final int rampPistonInModule          = 2;
-   public static final int rampPistonInChnl            = 4;
+   public static final int rampPistonInChnl            = 1;
    public static final int rampPistonOutModule         = 2;
-   public static final int rampPistonOutChnl           = 1;
+   public static final int rampPistonOutChnl           = 4;
    
    public static final int catcherPistonInModule       = 2;
    public static final int catcherPistonInChnl         = 5;
