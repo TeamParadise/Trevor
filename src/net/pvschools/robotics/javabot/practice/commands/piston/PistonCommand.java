@@ -13,27 +13,46 @@ import net.pvschools.robotics.javabot.practice.commands.RoboCommand;
 /**
  *
  * @author Trevor
+ * @author Bryce
  */
 public abstract class PistonCommand extends RoboCommand
 {
     /** Piston subsystems */
-    public static Piston pickupPistons =
-        new Piston(Map.pickupPistonsInSlot, Map.pickupPistonsInChnl, Map.pickupPistonsOutSlot, Map.pickupPistonsOutChnl);
     
-    public static Piston littleKickerPiston =
-        new Piston(Map.littleKickerPistonInSlot, Map.littleKickerPistonInChnl, Map.littleKickerPistonOutSlot, Map.littleKickerPistonOutChnl);
+    /** Big and little Kicker Pistons */
+    public static Piston kickerPistons =
+        new Piston(Map.kickerPistonsInChannel, Map.kickerPistonsOutChannel);
     
-    public static Piston bigKickerPiston =
-        new Piston(Map.bigKickerPistonInSlot, Map.bigKickerPistonInChnl, Map.bigKickerPistonOutSlot, Map.bigKickerPistonOutChnl);
+    /** Ramp and feed arms pistons */
+    public static Piston intakePistons =
+        new Piston(Map.intakePistonsInChannel, Map.intakePistonsOutChannel);
     
+    /** Latch piston */
     public static Piston latchPiston =
-        new Piston(Map.latchPistonInSlot, Map.latchPistonInChnl, Map.latchPistonOutSlot, Map.latchPistonOutChnl);
+        new Piston(Map.latchPistonInChannel, Map.latchPistonOutChannel);
     
-    public static Piston rampPiston =
-        new Piston(Map.rampPistonInSlot, Map.rampPistonInChnl, Map.rampPistonOutSlot, Map.rampPistonOutChnl);
-    
+    /** Side arms piston */
     public static Piston catcherPiston =
-        new Piston(Map.catcherPistonInSlot, Map.catcherPistonInChnl, Map.catcherPistonOutSlot, Map.catcherPistonOutChnl);
+        new Piston(Map.catcherPistonInChannel, Map.catcherPistonOutChannel);
+            
+    
+//    public static Piston pickupPistons =
+//        new Piston(Map.pickupPistonsInSlot, Map.pickupPistonsInChnl, Map.pickupPistonsOutSlot, Map.pickupPistonsOutChnl);
+//    
+//    public static Piston littleKickerPiston =
+//        new Piston(Map.littleKickerPistonInSlot, Map.littleKickerPistonInChnl, Map.littleKickerPistonOutSlot, Map.littleKickerPistonOutChnl);
+//    
+//    public static Piston bigKickerPiston =
+//        new Piston(Map.bigKickerPistonInSlot, Map.bigKickerPistonInChnl, Map.bigKickerPistonOutSlot, Map.bigKickerPistonOutChnl);
+//    
+//    public static Piston latchPiston =
+//        new Piston(Map.latchPistonInSlot, Map.latchPistonInChnl, Map.latchPistonOutSlot, Map.latchPistonOutChnl);
+//    
+//    public static Piston rampPiston =
+//        new Piston(Map.rampPistonInSlot, Map.rampPistonInChnl, Map.rampPistonOutSlot, Map.rampPistonOutChnl);
+//    
+//    public static Piston catcherPiston =
+//        new Piston(Map.catcherPistonInSlot, Map.catcherPistonInChnl, Map.catcherPistonOutSlot, Map.catcherPistonOutChnl);
     
     private final boolean isExtending;
     private final Piston piston;

@@ -7,18 +7,18 @@
 package net.pvschools.robotics.javabot.practice.commands.piston;
 
 /**
- * Command to retract the ramp lifter piston.
+ * Command to lower the ramp and extend the feed arms
  * 
- * @author jkoehring
+ * @author Bryce
  */
-public class RaiseRamp extends PistonCommand
+public class OpenIntake extends PistonCommand
 {
-	public RaiseRamp()
+	public OpenIntake()
 	{
-		super(rampPiston, retract);
+		super(intakePistons, extend);
 	}
 	
-	public RaiseRamp(double timeout)
+	public OpenIntake(double timeout)
 	{
 		this();
 		setTimeout(timeout);

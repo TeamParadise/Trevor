@@ -7,7 +7,7 @@
 package net.pvschools.robotics.javabot.practice.commands.piston;
 
 /**
- * Command to retract the latch piston.
+ * Command to extend the latch piston to close the latch
  * 
  * @author jkoehring
  */

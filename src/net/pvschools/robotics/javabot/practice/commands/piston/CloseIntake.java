@@ -6,21 +6,22 @@
 package net.pvschools.robotics.javabot.practice.commands.piston;
 
 /**
- * Command to retract the latch piston to open the latch
+ * Command to raise the ramp and retract the feed arms
  *
- * @author jkoehring
+ * @author Bryce
  */
-public class OpenLatch extends PistonCommand
+public class CloseIntake extends PistonCommand
 {
 
-    public OpenLatch()
+    public CloseIntake()
     {
-        super(latchPiston, retract);
+        super(intakePistons, retract);
     }
 
-    public OpenLatch(double timeout)
+    public CloseIntake(double timeout)
     {
         this();
         setTimeout(timeout);
     }
+
 }

@@ -3,26 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package net.pvschools.robotics.javabot.practice.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
-import net.pvschools.robotics.javabot.practice.commands.piston.ExtendPickup;
-import net.pvschools.robotics.javabot.practice.subsystems.FeedRoller;
 import net.pvschools.robotics.javabot.practice.commands.piston.OpenCatcher;
-import net.pvschools.robotics.javabot.practice.commands.piston.LowerRamp;
+import net.pvschools.robotics.javabot.practice.commands.piston.OpenIntake;
+import net.pvschools.robotics.javabot.practice.subsystems.FeedRoller;
 
 /**
- *
- * @author student
+ * Turns the feed rollers on and opens the intake
+ * @author Bryce
  */
 public class StartPickup extends CommandGroup
-{    
+{
+
     public StartPickup()
-	{
-	addParallel(new SetFeedRollerSpeed(FeedRoller.feedSpeed));
-        addSequential(new ExtendPickup(), 0.2);
+    {
+        addParallel(new SetFeedRollerSpeed(FeedRoller.feedSpeed));
+        addSequential(new OpenIntake(), 0.2);
         addParallel(new OpenCatcher());
-        addSequential(new LowerRamp());
     }
 }

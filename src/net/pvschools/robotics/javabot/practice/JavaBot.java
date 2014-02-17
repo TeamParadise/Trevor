@@ -7,14 +7,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import net.pvschools.robotics.javabot.practice.commands.ChargeKicker;
-import net.pvschools.robotics.javabot.practice.commands.ResetKicker;
 import net.pvschools.robotics.javabot.practice.commands.RunAutonomous;
-import net.pvschools.robotics.javabot.practice.commands.StopPickup;
-import net.pvschools.robotics.javabot.practice.commands.piston.CloseCatcher;
-import net.pvschools.robotics.javabot.practice.commands.piston.CloseLatch;
-import net.pvschools.robotics.javabot.practice.commands.piston.LowerRamp;
-import net.pvschools.robotics.javabot.practice.commands.piston.RetractPickup;
 
 /**
  *

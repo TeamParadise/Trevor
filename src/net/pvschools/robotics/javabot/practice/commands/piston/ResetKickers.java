@@ -6,19 +6,19 @@
 package net.pvschools.robotics.javabot.practice.commands.piston;
 
 /**
- * Command to retract the latch piston to open the latch
+ * Resets the kickers to uncharged state
  *
- * @author jkoehring
+ * @author Bryce
  */
-public class OpenLatch extends PistonCommand
+public class ResetKickers extends PistonCommand
 {
 
-    public OpenLatch()
+    public ResetKickers()
     {
-        super(latchPiston, retract);
+        super(kickerPistons, retract);
     }
 
-    public OpenLatch(double timeout)
+    public ResetKickers(double timeout)
     {
         this();
         setTimeout(timeout);
