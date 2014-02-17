@@ -1,6 +1,5 @@
 package net.pvschools.robotics.javabot.practice.subsystems;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.camera.AxisCamera;
 import edu.wpi.first.wpilibj.camera.AxisCameraException;
 import edu.wpi.first.wpilibj.command.Subsystem;
