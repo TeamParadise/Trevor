@@ -63,18 +63,18 @@ public class OI
         SmartDashboard.putNumber("Dampening", .5);
 		
 		// Add commands to smart dashboard:
-		SmartDashboard.putData("Open Catcher", new OpenCatcher());
-		SmartDashboard.putData("Close Catcher", new CloseCatcher());
-		SmartDashboard.putData("Raise Ramp", new RaiseRamp());
-		SmartDashboard.putData("Lower Ramp", new LowerRamp());
-		SmartDashboard.putData("Extend Pickup", new ExtendPickup());
-		SmartDashboard.putData("Retract Pickup", new RetractPickup());
-		SmartDashboard.putData("Extend Little Kicker", new ExtendLittleKicker());
-		SmartDashboard.putData("Retract Little Kicker", new RetractLittleKicker());
-		SmartDashboard.putData("Extend Big Kicker", new ExtendBigKicker());
-		SmartDashboard.putData("Retract Big Kicker", new RetractBigKicker());
-		SmartDashboard.putData("Open Latch", new OpenLatch());
-		SmartDashboard.putData("Close Latch", new CloseLatch());
+		SmartDashboard.putData(new OpenCatcher());
+		SmartDashboard.putData(new CloseCatcher());
+		SmartDashboard.putData(new RaiseRamp());
+		SmartDashboard.putData(new LowerRamp());
+		SmartDashboard.putData(new ExtendPickup());
+		SmartDashboard.putData(new RetractPickup());
+		SmartDashboard.putData(new ExtendLittleKicker());
+		SmartDashboard.putData(new RetractLittleKicker());
+		SmartDashboard.putData(new ExtendBigKicker());
+		SmartDashboard.putData(new RetractBigKicker());
+		SmartDashboard.putData(new OpenLatch());
+		SmartDashboard.putData(new CloseLatch());
 		
         //Button Command Initialization
         button2.whenPressed(new StartPickup());

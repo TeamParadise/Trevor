@@ -18,10 +18,4 @@ public class OpenCatcher extends PistonCommand
             //Backwards
 		super(catcherPiston, retract);
 	}
-	
-	public OpenCatcher(double timeout)
-	{
-		this();
-		setTimeout(timeout);
-	}
 }

@@ -16,12 +16,5 @@ public class RaiseRamp extends PistonCommand
 	public RaiseRamp()
 	{
 		super(rampPiston, retract);
-	}
-	
-	public RaiseRamp(double timeout)
-	{
-		this();
-		setTimeout(timeout);
-	}
-	
+	}	
 }

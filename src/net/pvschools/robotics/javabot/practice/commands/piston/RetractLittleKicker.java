@@ -17,11 +17,4 @@ public class RetractLittleKicker extends PistonCommand
 	{
 		super(littleKickerPiston, retract);
 	}
-	
-	public RetractLittleKicker(double timeout)
-	{
-		this();
-		setTimeout(timeout);
-	}
-	
 }

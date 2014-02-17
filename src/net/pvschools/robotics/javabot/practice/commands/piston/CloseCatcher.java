@@ -16,12 +16,5 @@ public class CloseCatcher extends PistonCommand
 	public CloseCatcher()
 	{
 		super(catcherPiston, extend);
-	}
-	
-	public CloseCatcher(double timeout)
-	{
-		this();
-		setTimeout(timeout);
-	}
-	
+	}	
 }

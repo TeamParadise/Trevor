@@ -17,10 +17,4 @@ public class OpenLatch extends PistonCommand
 	{
 		super(latchPiston, retract);
 	}
-	
-	public OpenLatch(double timeout)
-	{
-		this();
-		setTimeout(timeout);
-	}
 }

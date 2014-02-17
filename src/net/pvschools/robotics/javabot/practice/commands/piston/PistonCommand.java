@@ -11,7 +11,11 @@ import net.pvschools.robotics.javabot.practice.subsystems.Piston;
 import net.pvschools.robotics.javabot.practice.commands.RoboCommand;
 
 /**
- *
+ * Common base class for all commands that operate a piston.
+ * 
+ * The timeout is used to determine how long the solenoid should
+ * be activated. Subclasses should NOT set or change the timeout.
+ * 
  * @author Trevor
  */
 public abstract class PistonCommand extends RoboCommand
@@ -40,9 +44,12 @@ public abstract class PistonCommand extends RoboCommand
 	
 	final static boolean extend = true;
 	final static boolean retract = false;
+	
+	final static double powerOnTime = 0.05; // 50 milliseconds
     
     public PistonCommand(Piston piston, boolean isExtending)
 	{
+		super(powerOnTime);
 		requires(piston);
         this.piston = piston;
         this.isExtending = isExtending;
@@ -50,7 +57,7 @@ public abstract class PistonCommand extends RoboCommand
 
     protected void initialize() 
     {
-        if(isExtending) 
+        if (isExtending) 
         {
             piston.extend();
         }
@@ -82,6 +89,6 @@ public abstract class PistonCommand extends RoboCommand
 	private void idle()
 	{
 		// TODO: Uncomment if want to idle the pistion when the command is finished or interrupted.
-		//piston.idle();
+		piston.idle();
 	}
 }

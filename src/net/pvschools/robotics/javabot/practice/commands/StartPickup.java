@@ -7,6 +7,7 @@
 package net.pvschools.robotics.javabot.practice.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 import net.pvschools.robotics.javabot.practice.commands.piston.ExtendPickup;
 import net.pvschools.robotics.javabot.practice.subsystems.FeedRoller;
 import net.pvschools.robotics.javabot.practice.commands.piston.OpenCatcher;
@@ -20,8 +21,9 @@ public class StartPickup extends CommandGroup
 {    
     public StartPickup()
 	{
-	addParallel(new SetFeedRollerSpeed(FeedRoller.feedSpeed));
-        addSequential(new ExtendPickup(), 0.2);
+		addParallel(new SetFeedRollerSpeed(FeedRoller.feedSpeed));
+        addSequential(new ExtendPickup());
+		addSequential(new WaitCommand(0.2));
         addParallel(new OpenCatcher());
         addSequential(new LowerRamp());
     }

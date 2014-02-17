@@ -17,10 +17,4 @@ public class ExtendLittleKicker extends PistonCommand
 	{
 		super(littleKickerPiston, extend);
 	}
-	
-	public ExtendLittleKicker(double timeout)
-	{
-		this();
-		setTimeout(timeout);
-	}
 }

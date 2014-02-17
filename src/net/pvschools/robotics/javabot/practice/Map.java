@@ -42,9 +42,9 @@ public class Map
    public static final int pickupPistonsOutChnl        = 6;
    
    public static final int latchPistonInModule         = 1;
-   public static final int latchPistonInChnl           = 5;
+   public static final int latchPistonInChnl           = 2;
    public static final int latchPistonOutModule        = 1;
-   public static final int latchPistonOutChnl          = 2;
+   public static final int latchPistonOutChnl          = 5;
    
    public static final int bigKickerPistonInModule     = 1;
    public static final int bigKickerPistonInChnl       = 6;
