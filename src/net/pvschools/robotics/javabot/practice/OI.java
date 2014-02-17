@@ -83,21 +83,6 @@ public class OI
 		button11.whenPressed(new PushFeedRollerSpeed(FeedRoller.spewSpeed));
 		button11.whenReleased(new PopFeedRollerSpeed());
 		
-//        private static Boolean catching;
-//        if (button12.get())
-//        {
-//           Sonar Sonar = new Sonar(Map.SonarPingChannel,Map.SonarEchoChannel);
-//           if (Sonar.getDistanceInInches()<13 and !catching)
-//           {
-//              CloseCatcher Catcher = new CloseCatcher();
-//              Catcher.start();
-//              catching = true;
-//           } else
-//           {
-//               catching = false;
-//           }
-//        }
-        
         button1.whenPressed(new Shoot(button5.get()));
     }
     
