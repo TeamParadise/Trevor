@@ -7,6 +7,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import net.pvschools.robotics.javabot.practice.commands.PopFeedRollerSpeed;
+import net.pvschools.robotics.javabot.practice.commands.PushFeedRollerSpeed;
 import net.pvschools.robotics.javabot.practice.commands.StartPickup;
 import net.pvschools.robotics.javabot.practice.commands.StopPickup;
 import net.pvschools.robotics.javabot.practice.commands.Shoot;
@@ -22,7 +24,7 @@ import net.pvschools.robotics.javabot.practice.commands.piston.RaiseRamp;
 import net.pvschools.robotics.javabot.practice.commands.piston.RetractBigKicker;
 import net.pvschools.robotics.javabot.practice.commands.piston.RetractLittleKicker;
 import net.pvschools.robotics.javabot.practice.commands.piston.RetractPickup;
-import net.pvschools.robotics.javabot.practice.subsystems.Sonar;
+import net.pvschools.robotics.javabot.practice.subsystems.FeedRoller;
 
 public class OI
 {
@@ -36,16 +38,12 @@ public class OI
     /** Extend Feed <p> Keep extended while holding */
     private final Button button2 = new JoystickButton(mainJoystick, 2);
     
-    /** Side Arms Down */
     private final Button button3 = new JoystickButton(mainJoystick, 3);
     
-    /** Side Arms Up */
     private final Button button5 = new JoystickButton(mainJoystick, 5);
     
-    /** Ramp Down */
     private final Button button4 = new JoystickButton(mainJoystick, 4);
     
-    /** Ramp Up */
     private final Button button6 = new JoystickButton(mainJoystick, 6);
     
     private final Button button7 = new JoystickButton(mainJoystick, 7);
@@ -58,19 +56,33 @@ public class OI
     
     private final Button button11 = new JoystickButton(mainJoystick, 11);
     
-    /** Spew */
     private final Button button12 = new JoystickButton(mainJoystick, 12);
 
     private OI()
     {
         SmartDashboard.putNumber("Dampening", .5);
 		
+		// Add commands to smart dashboard:
+		SmartDashboard.putData("Open Catcher", new OpenCatcher());
+		SmartDashboard.putData("Close Catcher", new CloseCatcher());
+		SmartDashboard.putData("Raise Ramp", new RaiseRamp());
+		SmartDashboard.putData("Lower Ramp", new LowerRamp());
+		SmartDashboard.putData("Extend Pickup", new ExtendPickup());
+		SmartDashboard.putData("Retract Pickup", new RetractPickup());
+		SmartDashboard.putData("Extend Little Kicker", new ExtendLittleKicker());
+		SmartDashboard.putData("Retract Little Kicker", new RetractLittleKicker());
+		SmartDashboard.putData("Extend Big Kicker", new ExtendBigKicker());
+		SmartDashboard.putData("Retract Big Kicker", new RetractBigKicker());
+		SmartDashboard.putData("Open Latch", new OpenLatch());
+		SmartDashboard.putData("Close Latch", new CloseLatch());
+		
         //Button Command Initialization
         button2.whenPressed(new StartPickup());
         button2.whenReleased(new StopPickup());
-//		
-//		button11.whenPressed(new PushFeedRollerSpeed(FeedRoller.spewSpeed));
-//		button11.whenReleased(new PopFeedRollerSpeed());
+		
+		button11.whenPressed(new PushFeedRollerSpeed(FeedRoller.spewSpeed));
+		button11.whenReleased(new PopFeedRollerSpeed());
+		
 //        private static Boolean catching;
 //        if (button12.get())
 //        {
@@ -86,21 +98,7 @@ public class OI
 //           }
 //        }
         
-        button7.whenPressed(new OpenCatcher());
-        button7.whenReleased(new CloseCatcher());
-        button8.whenPressed(new RaiseRamp());
-        button8.whenReleased(new LowerRamp());
-        button9.whenPressed(new ExtendPickup());
-        button9.whenReleased(new RetractPickup());
-        button10.whenPressed(new ExtendLittleKicker());
-        button10.whenReleased(new RetractLittleKicker());
-        button11.whenPressed(new ExtendBigKicker());
-        button11.whenReleased(new RetractBigKicker());
-        button12.whenPressed(new OpenLatch());
-        button12.whenReleased(new CloseLatch());
-        
         button1.whenPressed(new Shoot(button5.get()));
-        
     }
     
     public double getDampening()
