@@ -18,22 +18,22 @@ public abstract class PistonCommand extends RoboCommand
 {
     /** Piston subsystems */
     public static Piston pickupPistons =
-        new Piston(Map.pickupPistonsInSlot, Map.pickupPistonsInChnl, Map.pickupPistonsOutSlot, Map.pickupPistonsOutChnl);
+        new Piston(Map.pickupPistonsInModule, Map.pickupPistonsInChnl, Map.pickupPistonsOutModule, Map.pickupPistonsOutChnl);
     
     public static Piston littleKickerPiston =
-        new Piston(Map.littleKickerPistonInSlot, Map.littleKickerPistonInChnl, Map.littleKickerPistonOutSlot, Map.littleKickerPistonOutChnl);
+        new Piston(Map.littleKickerPistonInModule, Map.littleKickerPistonInChnl, Map.littleKickerPistonOutModule, Map.littleKickerPistonOutChnl);
     
     public static Piston bigKickerPiston =
-        new Piston(Map.bigKickerPistonInSlot, Map.bigKickerPistonInChnl, Map.bigKickerPistonOutSlot, Map.bigKickerPistonOutChnl);
+        new Piston(Map.bigKickerPistonInModule, Map.bigKickerPistonInChnl, Map.bigKickerPistonOutModule, Map.bigKickerPistonOutChnl);
     
     public static Piston latchPiston =
-        new Piston(Map.latchPistonInSlot, Map.latchPistonInChnl, Map.latchPistonOutSlot, Map.latchPistonOutChnl);
+        new Piston(Map.latchPistonInModule, Map.latchPistonInChnl, Map.latchPistonOutModule, Map.latchPistonOutChnl);
     
     public static Piston rampPiston =
-        new Piston(Map.rampPistonInSlot, Map.rampPistonInChnl, Map.rampPistonOutSlot, Map.rampPistonOutChnl);
+        new Piston(Map.rampPistonInModule, Map.rampPistonInChnl, Map.rampPistonOutModule, Map.rampPistonOutChnl);
     
     public static Piston catcherPiston =
-        new Piston(Map.catcherPistonInSlot, Map.catcherPistonInChnl, Map.catcherPistonOutSlot, Map.catcherPistonOutChnl);
+        new Piston(Map.catcherPistonInModule, Map.catcherPistonInChnl, Map.catcherPistonOutModule, Map.catcherPistonOutChnl);
     
     private final boolean isExtending;
     private final Piston piston;

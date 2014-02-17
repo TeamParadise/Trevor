@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- * THis is a generic piston subsystem.
+ * This is a generic piston subsystem.
  * 
  * @author Trevor
  */
@@ -23,10 +23,12 @@ public class Piston extends Subsystem
         this.solenoidOut = new Solenoid(solenoidOutPort);
     }
     
-    public Piston(int solenoidInSlot, int solenoidInPort, int solenoidOutSlot, int solenoidOutPort)
+	// Solenoid module numbers are 1 and 2.
+	// Solenoid modules are NOT referred to by their cRIO slot numbers.
+    public Piston(int solenoidInModule, int solenoidInPort, int solenoidOutModule, int solenoidOutPort)
     {
-        this.solenoidIn = new Solenoid(solenoidInSlot, solenoidInPort);
-        this.solenoidOut = new Solenoid(solenoidOutSlot, solenoidOutPort);
+        this.solenoidIn = new Solenoid(solenoidInModule, solenoidInPort);
+        this.solenoidOut = new Solenoid(solenoidOutModule, solenoidOutPort);
     }
     
     public void extend()

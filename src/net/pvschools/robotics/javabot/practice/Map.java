@@ -36,37 +36,37 @@ public class Map
    // Solenoid ports are referenced by MODULE and channel.
    // The solenoid module in slot 3 is module 1.
    // The solenoid module in slot 7 is module 2.
-   public static final int pickupPistonsInSlot       = 2;
-   public static final int pickupPistonsInChnl       = 3;
-   public static final int pickupPistonsOutSlot      = 2;
-   public static final int pickupPistonsOutChnl      = 6;
+   public static final int pickupPistonsInModule       = 2;
+   public static final int pickupPistonsInChnl         = 3;
+   public static final int pickupPistonsOutModule      = 2;
+   public static final int pickupPistonsOutChnl        = 6;
    
-   public static final int latchPistonInSlot         = 1;
-   public static final int latchPistonInChnl         = 5;
-   public static final int latchPistonOutSlot        = 1;
-   public static final int latchPistonOutChnl        = 2;
+   public static final int latchPistonInModule         = 1;
+   public static final int latchPistonInChnl           = 5;
+   public static final int latchPistonOutModule        = 1;
+   public static final int latchPistonOutChnl          = 2;
    
-   public static final int bigKickerPistonInSlot     = 1;
-   public static final int bigKickerPistonInChnl     = 6;
-   public static final int bigKickerPistonOutSlot    = 1;
-   public static final int bigKickerPistonOutChnl    = 3;
+   public static final int bigKickerPistonInModule     = 1;
+   public static final int bigKickerPistonInChnl       = 6;
+   public static final int bigKickerPistonOutModule    = 1;
+   public static final int bigKickerPistonOutChnl      = 3;
    
-   public static final int littleKickerPistonInSlot  = 1;
-   public static final int littleKickerPistonInChnl  = 4;
-   public static final int littleKickerPistonOutSlot = 1;
-   public static final int littleKickerPistonOutChnl = 1;
+   public static final int littleKickerPistonInModule  = 1;
+   public static final int littleKickerPistonInChnl    = 4;
+   public static final int littleKickerPistonOutModule = 1;
+   public static final int littleKickerPistonOutChnl   = 1;
    
-   public static final int rampPistonInSlot          = 2;
-   public static final int rampPistonInChnl          = 4;
-   public static final int rampPistonOutSlot         = 2;
-   public static final int rampPistonOutChnl         = 1;
+   public static final int rampPistonInModule          = 2;
+   public static final int rampPistonInChnl            = 4;
+   public static final int rampPistonOutModule         = 2;
+   public static final int rampPistonOutChnl           = 1;
    
-   public static final int catcherPistonInSlot       = 2;
-   public static final int catcherPistonInChnl       = 5;
-   public static final int catcherPistonOutSlot      = 2;
-   public static final int catcherPistonOutChnl      = 2;
+   public static final int catcherPistonInModule       = 2;
+   public static final int catcherPistonInChnl         = 5;
+   public static final int catcherPistonOutModule      = 2;
+   public static final int catcherPistonOutChnl        = 2;
 
    //Sonar Ports
-   public static final int SonarPingChannel      = 2;   // Digital I/O
-   public static final int SonarEchoChannel      = 3;   // Digital I/O
+   public static final int sonarPingChannel      = 2;   // Digital I/O
+   public static final int sonarEchoChannel      = 3;   // Digital I/O
 }
