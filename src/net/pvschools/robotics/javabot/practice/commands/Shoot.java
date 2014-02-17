@@ -17,8 +17,12 @@ import net.pvschools.robotics.javabot.practice.commands.piston.CloseLatch;
  * @author Trevor
  * @author Bryce
  */
-public class Shoot extends CommandGroup {
-
+public class Shoot extends CommandGroup
+{
+    // Therse define how long to wait after releasing the
+    // delay before discharging the big kicker piston.
+    private final double standardShotDelay = 0.2; // 200 milliseconds
+    private final double quickShotDelay = 0.1; // 50 milliseconds
     /**
      * @since 12/21/2012
      * @param quickshot Shoot fast
@@ -32,15 +36,16 @@ public class Shoot extends CommandGroup {
          * Pull latch & shoot
          */
         addSequential(new OpenLatch());
-        addSequential(new WaitCommand((quickshot) ? 0.1 : 0.2));
+        addSequential(new WaitCommand(quickshot ? quickShotDelay : standardShotDelay));
 
         addSequential(new ResetKicker());
-        addSequential(new WaitCommand(1.5));
+        addSequential(new WaitCommand(5.0));
 
         addSequential(new CloseLatch());
-		addSequential(new WaitCommand(1));
+		addSequential(new WaitCommand(2));
 
-        addParallel(new ChargeKicker());
+        addSequential(new ChargeKicker());
+        addSequential(new WaitCommand(1.5));
         addSequential(new CloseCatcher());
     }
 }
