@@ -21,12 +21,12 @@ public class Sonar extends Subsystem
         Sonar = new Ultrasonic(PingChannel, EchoChannel);
     }
     
-    
     public void idle()
     {
     }
     
-    public double getDistanceInInches(){
+    public double getDistanceInInches()
+	{
         Sonar.setAutomaticMode(true);
         return Sonar.getRangeInches();
     }
