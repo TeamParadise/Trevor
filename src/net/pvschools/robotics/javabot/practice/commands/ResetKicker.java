@@ -17,7 +17,7 @@ import net.pvschools.robotics.javabot.practice.commands.piston.RetractLittleKick
  */
 public class ResetKicker extends CommandGroup
 {
-	public ResetKicker()
+    public ResetKicker()
 	{
 		addParallel(new ExtendBigKicker());
 		addSequential(new RetractLittleKicker());
