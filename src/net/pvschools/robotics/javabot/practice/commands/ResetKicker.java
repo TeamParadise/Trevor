@@ -19,7 +19,7 @@ public class ResetKicker extends CommandGroup
 {
     public ResetKicker()
 	{
-		addParallel(new ExtendBigKicker());
+		addSequential(new ExtendBigKicker());
 		addSequential(new RetractLittleKicker());
 	}
 }

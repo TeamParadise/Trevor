@@ -19,7 +19,7 @@ public class ChargeKicker extends CommandGroup
 {
 	public ChargeKicker()
 	{
-		addParallel(new RetractBigKicker());
+		addSequential(new RetractBigKicker());
 		addSequential(new ExtendLittleKicker());
 	}
 }

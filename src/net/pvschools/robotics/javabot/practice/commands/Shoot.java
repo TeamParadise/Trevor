@@ -11,6 +11,8 @@ import net.pvschools.robotics.javabot.practice.commands.piston.OpenCatcher;
 import net.pvschools.robotics.javabot.practice.commands.piston.OpenLatch;
 import net.pvschools.robotics.javabot.practice.commands.piston.CloseCatcher;
 import net.pvschools.robotics.javabot.practice.commands.piston.CloseLatch;
+import net.pvschools.robotics.javabot.practice.commands.piston.ExtendPickup;
+import net.pvschools.robotics.javabot.practice.commands.piston.RetractPickup;
 
 /**
  *
@@ -30,6 +32,7 @@ public class Shoot extends CommandGroup
     public Shoot(boolean quickshot)
     {
         addSequential(new OpenCatcher());
+        addSequential(new ExtendPickup());
         addSequential(new WaitCommand(0.2));
 
         /**
@@ -39,10 +42,11 @@ public class Shoot extends CommandGroup
         addSequential(new WaitCommand(quickshot ? quickShotDelay : standardShotDelay));
 
         addSequential(new ResetKicker());
-        addSequential(new WaitCommand(5.0));
+        addSequential(new RetractPickup());
+        addSequential(new WaitCommand(2.0));
 
         addSequential(new CloseLatch());
-		addSequential(new WaitCommand(2));
+		addSequential(new WaitCommand(1));
 
         addSequential(new ChargeKicker());
         addSequential(new WaitCommand(1.5));
