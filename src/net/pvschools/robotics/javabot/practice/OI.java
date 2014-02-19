@@ -8,12 +8,15 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import net.pvschools.robotics.javabot.practice.commands.ChargeKicker;
+import net.pvschools.robotics.javabot.practice.commands.PassCommand;
 import net.pvschools.robotics.javabot.practice.commands.PopFeedRollerSpeed;
 import net.pvschools.robotics.javabot.practice.commands.PushFeedRollerSpeed;
 import net.pvschools.robotics.javabot.practice.commands.ResetKicker;
 import net.pvschools.robotics.javabot.practice.commands.StartPickup;
 import net.pvschools.robotics.javabot.practice.commands.StopPickup;
 import net.pvschools.robotics.javabot.practice.commands.Shoot;
+import net.pvschools.robotics.javabot.practice.commands.StartCatch;
+import net.pvschools.robotics.javabot.practice.commands.StopCatch;
 import net.pvschools.robotics.javabot.practice.commands.piston.CloseCatcher;
 import net.pvschools.robotics.javabot.practice.commands.piston.CloseLatch;
 import net.pvschools.robotics.javabot.practice.commands.piston.ExtendBigKicker;
@@ -88,6 +91,11 @@ public class OI
 		button11.whenReleased(new PopFeedRollerSpeed());
 		
         button1.whenPressed(new Shoot(button5.get()));
+        
+        button3.whenPressed(new PassCommand());
+        
+        button4.whenPressed(new StartCatch());
+        button4.whenReleased(new StopCatch());
     }
     
     public double getDampening()
