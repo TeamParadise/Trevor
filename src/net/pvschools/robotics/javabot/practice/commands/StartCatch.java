@@ -11,7 +11,6 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 import net.pvschools.robotics.javabot.practice.commands.piston.ExtendPickup;
 import net.pvschools.robotics.javabot.practice.commands.piston.LowerRamp;
 import net.pvschools.robotics.javabot.practice.commands.piston.OpenCatcher;
-import net.pvschools.robotics.javabot.practice.subsystems.FeedRoller;
 
 /**
  *
@@ -20,9 +19,10 @@ import net.pvschools.robotics.javabot.practice.subsystems.FeedRoller;
 public class StartCatch extends CommandGroup
 {    
     public StartCatch()
-	{
+    {
+        //TODO add smart dashboard check
         addSequential(new ExtendPickup());
-		addSequential(new WaitCommand(0.2));
+	addSequential(new WaitCommand(0.2));
         addSequential(new OpenCatcher());
         addSequential(new LowerRamp());
     }
