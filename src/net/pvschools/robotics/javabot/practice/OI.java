@@ -85,7 +85,7 @@ public class OI
 		SmartDashboard.putData(new CloseLatch());
 		SmartDashboard.putData(new PrimeRobot());
         
-        SmartDashboard.putBoolean("Extend Pickup", true);
+        SmartDashboard.putBoolean("Extend Pickup", false);
 		
         //Button Command Initialization
         button2.whenPressed(new StartPickup());
