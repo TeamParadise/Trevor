@@ -20,12 +20,12 @@ import net.pvschools.robotics.javabot.practice.commands.piston.RetractPickup;
  *
  * @author Team Paradise
  */
-public class PassCommand extends CommandGroup
+public class HardPass extends CommandGroup
 {
     /**
      * @since 12/21/2012
      */
-    public PassCommand()
+    public HardPass()
     {
         addSequential(new ResetKicker());
         addSequential(new WaitCommand(.5));

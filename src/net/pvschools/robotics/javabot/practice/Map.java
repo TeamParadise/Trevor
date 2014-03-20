@@ -20,7 +20,8 @@ public class Map
    public static final int feedMotor             = 5;
    
    //Joystick Ports
-   public static final int joystickPort          = 1;
+   public static final int joystickPort1          = 1;
+   public static final int joystickPort2          = 2;
            
    //Joystick Ports
    public static final int gyroPort              = 1;
