@@ -25,6 +25,6 @@ public class RunAutonomous extends CommandGroup
 		addSequential(new DriveDirectional("Sideways Spd", "Sideways Dir", "Sideways Sec", "Sideways Rot"));
 		
         addSequential(new WaitForGoal(), 6);
-        addSequential(new Shoot(false));
+        addSequential(new Shoot(false, "Extend Pickup"));
     }    
 }

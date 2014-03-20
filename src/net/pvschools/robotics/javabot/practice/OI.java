@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import net.pvschools.robotics.javabot.practice.commands.ChargeKicker;
 import net.pvschools.robotics.javabot.practice.commands.PassCommand;
 import net.pvschools.robotics.javabot.practice.commands.PopFeedRollerSpeed;
+import net.pvschools.robotics.javabot.practice.commands.PrimeRobot;
 import net.pvschools.robotics.javabot.practice.commands.PushFeedRollerSpeed;
 import net.pvschools.robotics.javabot.practice.commands.ResetKicker;
 import net.pvschools.robotics.javabot.practice.commands.StartPickup;
@@ -65,14 +66,14 @@ public class OI
 
     private OI()
     {
-        SmartDashboard.putNumber("Dampening", .5);
+        SmartDashboard.putNumber("Dampening", .9);
 		
 		// Add commands to smart dashboard:
 		SmartDashboard.putData(new OpenCatcher());
 		SmartDashboard.putData(new CloseCatcher());
 		SmartDashboard.putData(new RaiseRamp());
 		SmartDashboard.putData(new LowerRamp());
-		SmartDashboard.putData(new ExtendPickup());
+		SmartDashboard.putData(new ExtendPickup("Extend Pickup"));
 		SmartDashboard.putData(new RetractPickup());
 		SmartDashboard.putData(new ChargeKicker());
 		SmartDashboard.putData(new ResetKicker());
@@ -82,6 +83,9 @@ public class OI
 		SmartDashboard.putData(new RetractBigKicker());
 		SmartDashboard.putData(new OpenLatch());
 		SmartDashboard.putData(new CloseLatch());
+		SmartDashboard.putData(new PrimeRobot());
+        
+        SmartDashboard.putBoolean("Extend Pickup", true);
 		
         //Button Command Initialization
         button2.whenPressed(new StartPickup());
@@ -90,11 +94,12 @@ public class OI
 		button11.whenPressed(new PushFeedRollerSpeed(FeedRoller.spewSpeed));
 		button11.whenReleased(new PopFeedRollerSpeed());
 		
-        button1.whenPressed(new Shoot(button5.get()));
+        button1.whenPressed(new Shoot(false, "Extend Pickup"));  // standard shot
+        button5.whenPressed(new Shoot(true, "Extend Pickup"));   // quick shot
         
         button3.whenPressed(new PassCommand());
         
-        button4.whenPressed(new StartCatch());
+        button4.whenPressed(new StartCatch("Extend Pickup"));
         button4.whenReleased(new StopCatch());
     }
     

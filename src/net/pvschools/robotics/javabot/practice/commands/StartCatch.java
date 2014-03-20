@@ -18,11 +18,11 @@ import net.pvschools.robotics.javabot.practice.commands.piston.OpenCatcher;
  */
 public class StartCatch extends CommandGroup
 {    
-    public StartCatch()
+    
+    public StartCatch(String extendPickupDashboardFlag)
     {
-        //TODO add smart dashboard check
-        addSequential(new ExtendPickup());
-	addSequential(new WaitCommand(0.2));
+        addSequential(new ExtendPickup(extendPickupDashboardFlag));
+        addSequential(new WaitCommand(0.2));
         addSequential(new OpenCatcher());
         addSequential(new LowerRamp());
     }

@@ -22,7 +22,7 @@ public class StartPickup extends CommandGroup
     public StartPickup()
 	{
 		addParallel(new SetFeedRollerSpeed(FeedRoller.feedSpeed));
-        addSequential(new ExtendPickup());
+        addSequential(new ExtendPickup(null));
 		addSequential(new WaitCommand(0.2));
         addParallel(new OpenCatcher());
         addSequential(new LowerRamp());

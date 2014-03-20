@@ -6,6 +6,8 @@
 
 package net.pvschools.robotics.javabot.practice.commands.piston;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 /**
  * Command to extend the pickup pistons.
  * 
@@ -13,8 +15,19 @@ package net.pvschools.robotics.javabot.practice.commands.piston;
  */
 public class ExtendPickup extends PistonCommand
 {
-	public ExtendPickup()
+    private String dashboardFlag;
+    
+	public ExtendPickup(String dashboardFlag)
 	{
 		super(pickupPistons, retract);
+        this.dashboardFlag = dashboardFlag;
 	}
+    
+    protected void initialize()
+    {
+        if (dashboardFlag == null || SmartDashboard.getBoolean(dashboardFlag))
+        {
+            super.initialize();
+        }
+    }
 }

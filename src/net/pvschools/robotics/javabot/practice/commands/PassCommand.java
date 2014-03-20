@@ -16,17 +16,14 @@ import net.pvschools.robotics.javabot.practice.commands.piston.OpenLatch;
 import net.pvschools.robotics.javabot.practice.commands.piston.RetractPickup;
 
 /**
+ * Shoots the ball just with the action of charging the kicker piston.
  *
  * @author Team Paradise
  */
 public class PassCommand extends CommandGroup
 {
-    // Therse define how long to wait after releasing the
-    // delay before discharging the big kicker piston.
-    private final double standardShotDelay = 0.2; // 200 milliseconds
     /**
      * @since 12/21/2012
-     * @param quickshot Shoot fast
      */
     public PassCommand()
     {
