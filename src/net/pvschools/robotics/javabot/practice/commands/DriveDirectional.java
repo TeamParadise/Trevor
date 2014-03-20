@@ -45,7 +45,7 @@ public class DriveDirectional extends RoboCommand
      * @param timeoutKey 
      * @param rotationKey 
      */
-    public DriveDirectional(String magnitudeKey, String directionKey, String timeoutKey, String rotationKey)
+    public DriveDirectional(String magnitudeKey, String directionKey, String rotationKey, String timeoutKey)
     {
         requires(driveTrain);
         this.magnitudeKey = magnitudeKey;

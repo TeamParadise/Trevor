@@ -24,7 +24,7 @@ public class Shoot extends CommandGroup
     // These define how long to wait after shooting the
     // ball before discharging the big kicker piston.
     private final double standardShotDelay = 0.2; // 200 milliseconds
-    private final double quickShotDelay = 0.1; // 50 milliseconds
+    private final double quickShotDelay = 0.1; // 100 milliseconds
     /**
      * @since 12/21/2012
      * @param quickshot Shoot fast
