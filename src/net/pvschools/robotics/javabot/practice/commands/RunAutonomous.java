@@ -16,10 +16,10 @@ public class RunAutonomous extends CommandGroup
     public RunAutonomous()
     {
 		// Add elements to smart dashboard for driving forward:
-		SmartDashboard.putNumber("Forward Spd", .3);
+		SmartDashboard.putNumber("Forward Spd", .6);
 		SmartDashboard.putNumber("Forward Dir", 270);
 		SmartDashboard.putNumber("Forward Rot", 0);
-		SmartDashboard.putNumber("Forward Sec", 1);
+		SmartDashboard.putNumber("Forward Sec", 0.8);
         
 		// Add elements to smart dashboard for driving sideways:
 		SmartDashboard.putNumber("Sideways Spd", 0);
