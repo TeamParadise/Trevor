@@ -11,7 +11,6 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 import net.pvschools.robotics.javabot.practice.commands.piston.CloseCatcher;
 import net.pvschools.robotics.javabot.practice.commands.piston.RaiseRamp;
 import net.pvschools.robotics.javabot.practice.commands.piston.RetractPickup;
-import net.pvschools.robotics.javabot.practice.subsystems.FeedRoller;
 
 /**
  *
@@ -22,7 +21,6 @@ public class StopCatch extends CommandGroup
     public StopCatch()
 	{
         addSequential(new RaiseRamp());
-        addSequential(new WaitCommand(.5));
         addSequential(new CloseCatcher());
         addSequential(new RetractPickup());
     }

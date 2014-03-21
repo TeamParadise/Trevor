@@ -29,8 +29,6 @@ public class PrimeRobot extends CommandGroup {
         addSequential(new CloseLatch());
 		addSequential(new WaitCommand(1));
 
-        addSequential(new ChargeKicker());
-        addSequential(new WaitCommand(1.5));
         addSequential(new CloseCatcher());
     }
     

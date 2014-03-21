@@ -102,9 +102,12 @@ public class OI
 		
         //Button Command Initialization
         
+        // Chargin
+        mainButton1.whenPressed(new ChargeKicker());  // standard shot charge
+        secondaryButton1.whenPressed(new ChargeKicker());  // standard shot charge
         // Shooting
-        mainButton1.whenPressed(new Shoot(false, "Extend Pickup"));  // standard shot
-        secondaryButton1.whenPressed(new Shoot(false, "Extend Pickup"));  // standard shot
+        mainButton1.whenReleased(new Shoot(false, "Extend Pickup"));  // standard shot
+        secondaryButton1.whenReleased(new Shoot(false, "Extend Pickup"));  // standard shot
 
         mainButton5.whenPressed(new Shoot(true, "Extend Pickup"));   // quick shot
         secondaryButton5.whenPressed(new Shoot(true, "Extend Pickup"));   // quick shot
@@ -135,6 +138,9 @@ public class OI
         
         secondaryButton6.whenPressed(new StartCatch("Extend Pickup"));
         secondaryButton6.whenReleased(new StopCatch());
+        
+        mainButton12.whenPressed(new PrimeRobot());
+        secondaryButton12.whenPressed(new PrimeRobot());
     }
     
     public double getDampening()
