@@ -27,8 +27,6 @@ public class HardPass extends CommandGroup
      */
     public HardPass()
     {
-        addSequential(new ResetKicker());
-        addSequential(new WaitCommand(.5));
         addSequential(new OpenCatcher());
         addSequential(new WaitCommand(0.2));
 
@@ -45,10 +43,7 @@ public class HardPass extends CommandGroup
         addSequential(new WaitCommand(2.0));
 
         addSequential(new CloseLatch());
-		addSequential(new WaitCommand(1));
-
-        addSequential(new ChargeKicker());
-        addSequential(new WaitCommand(1.5));
+        addSequential(new WaitCommand(0.5));
         addSequential(new CloseCatcher());
     }
 }
